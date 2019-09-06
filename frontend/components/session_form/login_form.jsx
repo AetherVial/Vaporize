@@ -21,14 +21,14 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(this.props.history.push('/'));
+            .then(() => this.props.history.push('/browse'));
     }
 
     renderErrors() {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error: ${i}`}>
+                    <li class = "errors" key={`error: ${i}`}>
                         {error}
                     </li>
                 ))}
@@ -46,29 +46,25 @@ class LoginForm extends React.Component {
                 <a href="#" className="demo-user-button">Log in as Demo User</a>
                 <br />
                 <form onSubmit={this.handleSubmit}>
-                <br />
-                    <br/>
                     To continue, please log in to Vaporize.
-                    
+                    {this.renderErrors()}
                     <div>
                         <br />
-                        <label>
-              <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                placeholder="Email or username"
-                            />
-                        </label>
-                        <br />
-                        <label>
-              <input type="password"
+                        
+                        <input className="text-field" type="text"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder="Username"
+                        />
+                        <br></br>
+                        <input className="text-field"
+                                type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 placeholder="Password"
                             />
-                        </label>
-                        <br />
-                        <input type="submit" value={this.props.formType} />
+                        <br></br>
+                        <input className="login-user-button" type="submit" value={this.props.formType} />
                     </div>
                 </form>
             </div>

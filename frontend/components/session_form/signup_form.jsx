@@ -23,12 +23,12 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(this.props.history.push('/'));
+            .then(() => this.props.history.push('/browse'));
     }
 
     renderErrors() {
         return (
-            <ul>
+            <ul class="errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error: ${i}`}>
                         {error}
@@ -40,55 +40,69 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div >
+            <div className="session-form">
+                <div id="login-logo"><img src="assets/PBIcon.png" />
+                    <div id="apptitle">Vaporize</div>
+                </div>
+                <br />
+                <a href="#" className="demo-user-button">Log in as Demo User</a>
+                <br />
                 <form onSubmit={this.handleSubmit}>
                     Welcome to Vaporize!
-          <br />
+                <br />
                     Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
                     <div>
                         <br />
-                        <label>Username:
-              <input type="text"
+                        
+                            <input 
+                                className="text-field"
+                                type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
-
+                                placeholder="Username"
                             />
-                        </label>
+                        
                         <br />
-                        <label>Password:
-              <input type="password"
+                        
+                        <input 
+                                className="text-field"
+                                type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
-
-                            />
-                        </label>
+                                placeholder="Password"
+                        />
+                        
                         <br />
-                        <label>First Name:
-              <input type="text"
+                        
+                        <input 
+                                className="text-field"
+                                type="text"
                                 value={this.state.first_name}
                                 onChange={this.update('first_name')}
-
+                                placeholder="First Name"
                             />
-                        </label>
+                       
                         <br />
-                        <label>Last Name:
-              <input type="text"
+                        
+                        <input className="text-field"
+                                type="text"
                                 value={this.state.last_name}
-                                onChange={this.update('lastname')}
-
+                                onChange={this.update('last_name')}
+                                placeholder="Last Name"
                             />
-                        </label>
                         <br />
-                        <label>Password:
-              <input type="email"
+                        <input 
+                                className="text-field"  
+                                type="email"
                                 value={this.state.email}
                                 onChange={this.update('email')}
-
+                                placeholder="Email"
                             />
-                        </label>
                         <br />
-                        <input type="submit" value={this.props.formType} />
+                        <br />
+                        <input class="login-user-button" 
+                        type="submit" value={this.props.formType} />
                     </div>
                 </form>
             </div>
