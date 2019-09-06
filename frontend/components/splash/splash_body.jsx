@@ -12,16 +12,16 @@ const SplashBody = () => (
         <Link to="/login" component={LoginFormContainer} className="main-content-3">Log In</Link>
         <Link to="/signup" component={SignupFormContainer} className="main-content-3">Sign Up</Link>
     </div>
-    <div class="footer">
-        <div class="list-container">
-            <div class="footer-list">
+    <div className="footer">
+        <div className="list-container">
+            <div className="footer-list">
                 <div id="logo">
                     <img src="assets/PBIcon.png"/>
                     <a id="apptitle">Vaporize</a>
                 </div>
             </div>
 
-            <div class="footer-list">
+            <div className="footer-list">
                 <ul>
                     <li>Tech List</li>
                     <li>Ruby on Rails</li>
@@ -30,7 +30,7 @@ const SplashBody = () => (
                 </ul>
             </div>
 
-            <div class="footer-list">
+            <div className="footer-list">
                 <ul>
                     <li>Contact Info</li>
                     <li>Linkedin</li>

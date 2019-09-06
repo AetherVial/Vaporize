@@ -1,0 +1,35 @@
+.session-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border: 3px solid red;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#login-logo {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+}
+
+.demo-user-button {
+    background-color: purple;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 110px 18px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+}
