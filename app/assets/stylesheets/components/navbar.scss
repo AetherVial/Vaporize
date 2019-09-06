@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    height: 75px;
+    z-index: 3;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    margin-left: 20%;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+}
+
+#apptitle {
+    /* font-family: proxima */
+    font-family: sans-serif;
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+#menu {
+    display: flex;
+    font-family: sans-serif;
+}
+
+.nav-right {
+    display: flex;
+    width: 36.5%;
+    margin-right: 7.5%;
+    font-size: 16;
+    font-weight: 700;
+}
+
+.menu-item {
+    display: inline;
+    margin-right: 11%;
+    white-space: nowrap;
+}
+
+li > a:hover {
+    color: rgb(112, 192, 219);
+}
