@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import {Root} from './components/root';
 import configureStore from './store/store';
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
@@ -19,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
+    
+    // disableBodyScroll(root);
+    
 
     //TESTING
     window.getState = store.getState;

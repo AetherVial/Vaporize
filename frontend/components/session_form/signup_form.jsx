@@ -41,8 +41,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <div id="login-logo"><img src="assets/PBIcon.png" />
-                    <div id="apptitle">Vaporize</div>
+                <div><img src="assets/PBIcon.png"/>
                 </div>
                 <br />
                 <a href="#" className="demo-user-button">Log in as Demo User</a>

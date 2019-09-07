@@ -1,15 +1,17 @@
 import React from 'react';
 
-class Browse extends React.Component {
+class MusicBar extends React.Component {
     constructor(props) {
         super(props)
     }
 
     render() {
         return (
-            <div className="browse">blah</div>
+            <div class="musicBar">
+            
+            </div>
         )
     }
 }
 
-export default Browse;
+export default MusicBar;

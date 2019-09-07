@@ -1,0 +1,23 @@
+.navBar {
+    padding-top: 24px;
+    flex-direction: column;
+    justify-content: left;
+    flex: 1;
+    height: 87.5vh;
+    width: 210px;
+    color: rgb(112, 192, 219);
+    background-color: rgba(0, 0, 0, .75);
+    cursor: pointer;
+    z-index: 1;
+    position: fixed;
+}
+
+#navBar-header {
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    margin-left: 5%;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+}
+
