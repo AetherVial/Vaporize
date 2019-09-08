@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     update(field) {
@@ -21,7 +22,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/browse'));
+            // .then(() => this.props.history.push('/browse'));
     }
 
     renderErrors() {
@@ -36,6 +37,35 @@ class LoginForm extends React.Component {
         );
     }
 
+    handleDemo(e) {
+        e.persist();
+        let user = "DemoUser".split('');
+        let password = "hailsatan".split('');
+        this.addUsername(user, password, e)
+    }
+
+    addUsername(user, pw, e) {
+        setTimeout(() => {
+            this.setState({username: this.state.username + user.shift()})
+            if (user.length != 0) {
+                this.addUsername(user, pw, e)
+            } else {
+                this.addPassword(pw, e)
+            }
+        }, 200)
+    }
+
+    addPassword(pw, e) {
+        setTimeout(() => {
+            this.setState({ password: this.state.password + pw.shift() })
+            if (pw.length != 0) {
+                this.addPassword(pw, e)
+            } else {
+                setInterval(this.handleSubmit(e), 300)
+            }
+        }, 200)
+    }
+
     render() {
         return (
             <div className= "session-form">
@@ -43,7 +73,7 @@ class LoginForm extends React.Component {
                     <div id="apptitle">Vaporize</div>
                 </div>
                 <br />
-                <a href="#" className="demo-user-button">Log in as Demo User</a>
+                <div onClick={this.handleDemo} className="demo-user-button">Log In as Demo User</div>
                 <br />
                 <form onSubmit={this.handleSubmit}>
                     To continue, please log in to Vaporize.

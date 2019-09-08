@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class SignupForm extends React.Component {
                 <div><img src="assets/PBWhiteBg.png"/>
                 </div>
                 <br />
-                <a href="#" className="demo-user-button">Log in as Demo User</a>
+                <Link to="/login" className="demo-user-button">Log In Instead</Link>
                 <br />
                 <form onSubmit={this.handleSubmit}>
                     Welcome to Vaporize!
