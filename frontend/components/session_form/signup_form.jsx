@@ -41,7 +41,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <div><img src="assets/PBIcon.png"/>
+                <div><img src="assets/PBWhiteBg.png"/>
                 </div>
                 <br />
                 <a href="#" className="demo-user-button">Log in as Demo User</a>
@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     Welcome to Vaporize!
                 <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    Please sign up!
                     {this.renderErrors()}
                     <div>
                         <br />

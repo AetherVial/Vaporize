@@ -5,19 +5,55 @@
     flex: 1;
     height: 87.5vh;
     width: 210px;
-    color: rgb(112, 192, 219);
+    color: lightgray;
     background-color: rgba(0, 0, 0, .75);
     cursor: pointer;
     z-index: 1;
     position: fixed;
+    font-family: 'Proxima-Nova';
+    font-size: 12px;
 }
 
 #navBar-header {
-    background-color: rgba(0, 0, 0, .75);
+    // background-color: inherit;
     display: flex;
     margin-left: 5%;
     height: 40px;
     width: 40px;
     align-items: center;
+    padding-bottom: 24px;
 }
 
+.sidebar-el {
+    display: flex;
+    margin: 0;
+    padding-left: 24px;
+    padding-bottom: 10px;
+    border: 0;
+    outline: 0;
+    font-family: 'Proxima-Nova';
+    align-items: center;
+    text-align: center;
+    background: transparent;
+}
+
+.sidebar-el:hover {
+    color: white;
+    text-shadow: 0 0 3px #FFF;
+}
+
+// .side-list {
+//     position: relative;
+//     flex-direction: column;
+//     flex: 1;
+//     flex-grow: 1;
+//     flex-shrink: 0;
+//     min-height: 175px;
+//     margin-top: 24px;
+// }
+
+svg {
+    height: 24px;
+    width: 24px;
+    padding-right: 10px;
+}

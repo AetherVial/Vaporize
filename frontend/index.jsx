@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
-    // disableBodyScroll(root);
-    
 
     //TESTING
     window.getState = store.getState;
