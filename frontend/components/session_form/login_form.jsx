@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
             } else {
                 this.addPassword(pw, e);
             }
-        }, 200);
+        }, 100);
     }
 
     addPassword(pw, e) {
@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             } else {
                 this.handleSubmit(e);
             }
-        }, 200);
+        }, 100);
     }
 
     render() {

@@ -6,12 +6,10 @@ class SidebarPlaylists extends React.Component {
     }
 
     render() {
-
         let list = this.props.playlists.map(playlist => {
             console.log(playlist)
             return <li key={playlist.id}>{playlist.title}</li>
         })
-
         return(
            <ul>{list}</ul>
         )

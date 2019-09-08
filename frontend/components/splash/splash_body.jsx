@@ -18,7 +18,7 @@ const SplashBody = () => (
                     <li className="menu-item" ><Link to="/login" component={LoginFormContainer}>Log In</Link></li>
                     <li className="menu-item"><Link to="/signup" component={SignupFormContainer}>Sign Up</Link></li>
                     <li className="menu-item">Tech Stack
-                    <ul class="nav-stack">
+                    <ul className="nav-stack">
                         <li>Ruby on Rails</li>
                         <li>React / Redux</li>
                         <li>Postgresql</li>

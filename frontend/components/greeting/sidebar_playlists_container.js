@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import SidebarPlaylists from "./sidebar_playlists";
 
 const mapStateToProps = (state, ownProps) => {
-    return({
+    return ({
         playlists: Object.values(currentUserPlaylists(state)),
         currentUserId: state.session.id,
     })
