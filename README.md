@@ -1,15 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Vaporize, my personalized Spotify clone! This application makes use of RESTful API concepts, Ruby on Rails MVC framework, and the React / Redux cycle to deliver a faithful Spotify experience, but styled to my personal tastes. 
 
-Things you may want to cover:
+You can run this application from your personal device with the following:
 
-* Ruby version
+Ruby v.2.5.1
+Rails v.5.2.3
+Node Package Manager
+Postgreql
 
-* System dependencies
-
-* Configuration
+To run:
+1. Start Postgreql
+2. Run `npm install` in terminal
+3. Run `bundle install` in terminal
+4. Run `rails s` in terminal
+5. Go to `localhost:3000` in browser and enjoy!
 
 * Database creation
 
