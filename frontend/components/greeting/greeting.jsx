@@ -3,7 +3,15 @@ import {Link} from 'react-router-dom';
 
 
 
-const Greeting = ({currentUser, logout}) => {
+class Greeting extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    componentDidMount() {
+        this.props.fetchPlaylists()
+    }
+    
+    render() {
     const loggedinLinks = () => (
         <nav className="navBar">
             <div id="navBar-header"><img src="assets/PBIcon.png" />
@@ -23,10 +31,11 @@ const Greeting = ({currentUser, logout}) => {
                 
             </div>
             
-            <div className="sidebar-el" onClick = {logout}>Log out!</div>
+            <div className="sidebar-el" onClick = {this.props.logout}>Log out!</div>
         </nav>
     )
-    return currentUser ? loggedinLinks() : null;
+    return this.props.currentUser ? loggedinLinks() : null;
+    }
 }
 
 export default Greeting;

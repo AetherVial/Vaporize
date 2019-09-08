@@ -21,8 +21,7 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user)
-            // .then(() => this.props.history.push('/browse'));
+        this.props.processForm(user);
     }
 
     renderErrors() {
@@ -41,29 +40,29 @@ class LoginForm extends React.Component {
         e.persist();
         let user = "DemoUser".split('');
         let password = "hailsatan".split('');
-        this.addUsername(user, password, e)
+        this.addUsername(user, password, e);
     }
 
     addUsername(user, pw, e) {
         setTimeout(() => {
-            this.setState({username: this.state.username + user.shift()})
+            this.setState({username: this.state.username + user.shift()});
             if (user.length != 0) {
-                this.addUsername(user, pw, e)
+                this.addUsername(user, pw, e);
             } else {
-                this.addPassword(pw, e)
+                this.addPassword(pw, e);
             }
-        }, 200)
+        }, 200);
     }
 
     addPassword(pw, e) {
         setTimeout(() => {
-            this.setState({ password: this.state.password + pw.shift() })
+            this.setState({ password: this.state.password + pw.shift() });
             if (pw.length != 0) {
-                this.addPassword(pw, e)
+                this.addPassword(pw, e);
             } else {
-                setInterval(this.handleSubmit(e), 300)
+                this.handleSubmit(e);
             }
-        }, 200)
+        }, 200);
     }
 
     render() {
