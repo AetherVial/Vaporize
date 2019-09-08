@@ -4,10 +4,10 @@ Welcome to Vaporize, my personalized Spotify clone! This application makes use o
 
 You can run this application from your personal device with the following:
 
-Ruby v.2.5.1
-Rails v.5.2.3
-Node Package Manager
-Postgreql
+1. Ruby v.2.5.1  
+2. Rails v.5.2.3  
+3. Node Package Manager(npm)
+4. Postgreql
 
 To run:
 1. Start Postgreql
