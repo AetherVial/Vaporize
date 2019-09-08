@@ -47,3 +47,33 @@
 li > a:hover {
     color: rgb(112, 192, 219);
 }
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-stack {
+  display: none;
+  margin-top: 30px;
+  margin-left: 80.5%;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  left: -1px;
+  font-size: 16px;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, .75);
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+li:hover .nav-stack {
+  display: block;
+}
+
+.nav-stack > li {
+    margin-top: 5px;
+  color: white;
+}
