@@ -27,7 +27,7 @@ const SplashBody = () => (
         <Link to="/login" component={LoginFormContainer} className="main-content-3">Log In</Link>
         <Link to="/signup" component={SignupFormContainer} className="main-content-3">Sign Up</Link>
     </div>
-    <div className="footer">
+    {/* <div className="footer">
         <div className="list-container">
             <div className="footer-list">
                 <div id="logo">
@@ -53,7 +53,7 @@ const SplashBody = () => (
                 </ul>
             </div>
         </div>
-    </div>
+    </div> */}
 </div>
 
 )

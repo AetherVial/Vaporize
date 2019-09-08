@@ -7,7 +7,7 @@ class MusicBar extends React.Component {
 
     render() {
         return (
-            <div class="musicBar">
+            <div className="musicBar">
             
             </div>
         )

@@ -37,23 +37,29 @@
     background: transparent;
 }
 
+.list-header {
+    padding: 24px;
+}
+
 .sidebar-el:hover {
     color: white;
     text-shadow: 0 0 3px #FFF;
 }
 
-// .side-list {
-//     position: relative;
-//     flex-direction: column;
-//     flex: 1;
-//     flex-grow: 1;
-//     flex-shrink: 0;
-//     min-height: 175px;
-//     margin-top: 24px;
-// }
+.sidebar-list {
+    display: flex;
+    margin: 0;
+    font-family: 'Proxima-Nova';
+    align-items: left;
+    text-align: left;
+    padding-left: 24px;
+    min-height: 175px;
+    margin-top: 24px;
+}
 
 svg {
     height: 24px;
     width: 24px;
     padding-right: 10px;
 }
+
