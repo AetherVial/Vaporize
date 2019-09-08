@@ -1,7 +1,12 @@
 class Api::PlaylistsController < ApplicationController
 
     def index
-        @playlists = Playlist.all
+        if params[:userId]
+            @playlists = User.find(params[:userId]).playlists
+        else
+            @playlists = Playlist.all
+        end
+        render :index
     end
 
     def show
@@ -40,6 +45,6 @@ class Api::PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:name)
+        params.require(:playlist).permit(:title)
     end
 end

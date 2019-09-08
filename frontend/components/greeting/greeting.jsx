@@ -1,17 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import SidebarPlaylistsContainer from './sidebar_playlists_container';
 
 
 class Greeting extends React.Component {
     constructor(props) {
         super(props)
     }
-    componentDidMount() {
-        this.props.fetchPlaylists()
-    }
     
+    componentDidMount() {
+        this.props.fetchPlaylists();
+    }
+
     render() {
+
     const loggedinLinks = () => (
         <nav className="navBar">
             <div id="navBar-header"><img src="assets/PBIcon.png" />
@@ -26,9 +28,11 @@ class Greeting extends React.Component {
             <div className="sidebar-el">
                 <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M311.873 77.46l166.349 373.587-39.111 17.27-166.349-373.587zM64 463.746v-384h42.666v384h-42.666zM170.667 463.746v-384h42.667v384h-42.666z" fill="currentColor"></path></svg>
                 Your Library</div>
-            <h1 className="list-header">Your Playlists:</h1>
+
+            <h1 className="list-header">Playlists:</h1>
+
             <div className="sidebar-list">
-                
+                <SidebarPlaylistsContainer />
             </div>
             
             <div className="sidebar-el" onClick = {this.props.logout}>Log out!</div>
