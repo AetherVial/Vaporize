@@ -7,6 +7,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import BrowseContainer from './music/browse_container';
 import MusicBar from "./music/musicbar";
+import PlaylistShowContainer from "./music/playlist_show_container";
 
 
 const App = () => (
@@ -16,10 +17,10 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
 
         <GreetingContainer />
-
+        
         <ProtectedRoute path="/browse" component={BrowseContainer} />
         <ProtectedRoute path="/" component={MusicBar} />
-        
+        <ProtectedRoute path="/playlists/:playlistId" component={PlaylistShowContainer}/>
     </div>
 );
 

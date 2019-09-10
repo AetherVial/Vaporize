@@ -1,0 +1,11 @@
+.playlist_show {
+    border: 3px solid red;
+    background: rgb(0,212,255);
+    background: linear-gradient(135deg, rgba(0,212,255,1) 0%, rgba(0,0,0,1) 71%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    padding-left: 250px;
+    font-family: "Proxima-Nova";
+    color: lightgrey;
+}

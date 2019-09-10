@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li class = "errors" key={`error: ${i}`}>
+                    <li className = "errors" key={`error: ${i}`}>
                         {error}
                     </li>
                 ))}
@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
     handleDemo(e) {
         e.persist();
         let user = "DemoUser".split('');
-        let password = "hailsatan".split('');
+        let password = "hailsatan".split(''); //demo user creds courtesy of github.com/owenshaupt
         this.addUsername(user, password, e);
     }
 
@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
             } else {
                 this.addPassword(pw, e);
             }
-        }, 100);
+        }, 50);
     }
 
     addPassword(pw, e) {
@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             } else {
                 this.handleSubmit(e);
             }
-        }, 100);
+        }, 50);
     }
 
     render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import SidebarPlaylistsContainer from './sidebar_playlists_container';
-
+import NewPlaylistContainer from '../music/new_playlist_container';
 
 class Greeting extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Greeting extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchPlaylists();
+        this.props.fetchPlaylists()
     }
 
     render() {
@@ -32,7 +32,7 @@ class Greeting extends React.Component {
             <h1 className="list-header">Playlists:</h1>
 
             <div className="sidebar-list">
-                <SidebarPlaylistsContainer />
+                <SidebarPlaylistsContainer/>
             </div>
             
             <div className="sidebar-el" onClick = {this.props.logout}>Log out!</div>

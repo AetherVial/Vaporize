@@ -1,8 +1,6 @@
 import React from "react";
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
 
 const SplashBody = () => (
 <div>
@@ -15,8 +13,8 @@ const SplashBody = () => (
                     <li className="menu-item"><a href="https://www.github.com/Aethervial">GitHub</a></li>
                     <li><a href="#">|</a></li>
                     <li className="menu-item"></li>
-                    <li className="menu-item" ><Link to="/login" component={LoginFormContainer}>Log In</Link></li>
-                    <li className="menu-item"><Link to="/signup" component={SignupFormContainer}>Sign Up</Link></li>
+                    <li className="menu-item" ><Link to="/login">Log In</Link></li>
+                    <li className="menu-item"><Link to="/signup">Sign Up</Link></li>
                     <li className="menu-item">Tech Stack
                     <ul className="nav-stack">
                         <li>Ruby on Rails</li>
@@ -30,8 +28,8 @@ const SplashBody = () => (
     <div className="main">
         <div className="main-content-1">Music for someone!</div>
         <div className="main-content-2">Generic Vaporwave Background! Only a few songs!</div>
-        <Link to="/login" component={LoginFormContainer} className="main-content-3">Log In</Link>
-        <Link to="/signup" component={SignupFormContainer} className="main-content-3">Sign Up</Link>
+        <Link to="/login"  className="main-content-3">Log In</Link>
+        <Link to="/signup" className="main-content-3">Sign Up</Link>
     </div>
     {/* <div className="footer">
         <div className="list-container">
