@@ -8,7 +8,6 @@ class PlaylistShow extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount() {
-        // console.log(this.props.match.params.playlistId)
         fetchPlaylist(this.props.match.params.playlistId)
     }
 

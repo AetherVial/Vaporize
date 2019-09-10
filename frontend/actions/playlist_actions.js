@@ -23,7 +23,6 @@ export const fetchPlaylists = (userId) => dispatch => (
 );
 
 export const fetchPlaylist = id => dispatch => {
-    console.log(PlaylistApiUtils.fetchPlaylist(id))
     return PlaylistApiUtils.fetchPlaylist(id).then(playlist => dispatch(receivePlaylist(playlist)))
 };
 
