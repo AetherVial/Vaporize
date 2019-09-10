@@ -13,6 +13,29 @@ class Greeting extends React.Component {
         this.props.fetchPlaylists()
     }
 
+    loadModal(e) {
+        e.preventDefault();
+        const modal = document.getElementById("myModal");
+        // const btn = document.getElementById("myBtn");
+        const span = document.getElementsByClassName("close")[0];
+        let x = document.getElementById("myModal").style;
+        if (x.display == "" || x.display == 'none') {
+            modal.style.display = "block";
+            modal.style.position = "fixed";
+            modal.style.zIndex = 5;
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
     render() {
 
     const loggedinLinks = () => (
@@ -29,9 +52,9 @@ class Greeting extends React.Component {
             <div className="sidebar-el">
                 <SVGUtil.library />
                 Your Library</div>
-
-            <h1 className="list-header">Playlists:</h1>
-
+            <button onClick={this.loadModal} id="myBtn" className="sidebar-el">
+                <SVGUtil.plus />New Playlist</button>
+            <NewPlaylistContainer />
             <div className="sidebar-list">
                 <SidebarPlaylistsContainer/>
             </div>

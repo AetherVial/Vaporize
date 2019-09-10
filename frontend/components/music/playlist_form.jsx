@@ -18,7 +18,7 @@ class PlaylistForm extends React.Component {
         e.preventDefault();
         let close = document.getElementsByClassName("close");
         this.props.action(this.state)
-            .then(() => this.props.history.push(`/`));
+            .then(() => this.props.history.push(`/browse`));
         this.setState({
             title: ''
         })

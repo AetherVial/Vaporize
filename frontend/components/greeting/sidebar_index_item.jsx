@@ -9,7 +9,6 @@ const SidebarIndexItem = ({ playlist }) => { //deletePlaylist
             <Link to={`/playlists/${playlist.id}`}>
                 {playlist.title}
             </Link>
-            {/* <button onClick={() => deletePost(post.id)}>Delete</button> */}
         </li>);
 };
 
