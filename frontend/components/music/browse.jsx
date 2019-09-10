@@ -11,9 +11,9 @@ class Browse extends React.Component {
                 <div className="browse-header">
                     
                 </div>
-                <div>
-                    <h1 className="made-for-header">Made for {this.props.currentUser.username}</h1>
-                    Get worse recommendations the more you listen.
+                <div className="made-for-header">
+                    <h1>Made for {this.props.currentUser.username}</h1>
+                    <h3>Get worse recommendations the more you listen.</h3>
                     </div>
             </div>
         )

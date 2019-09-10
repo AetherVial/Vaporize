@@ -1,5 +1,5 @@
 import React from 'react';
-
+import clearAllErrors from "../../actions/session_actions";
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -10,6 +10,10 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.props.clearAllErrors();
     }
 
     update(field) {
@@ -38,8 +42,12 @@ class LoginForm extends React.Component {
 
     handleDemo(e) {
         e.persist();
+        this.setState({
+            username: '',
+            password: ''
+        })
         let user = "DemoUser".split('');
-        let password = "hailsatan".split(''); //demo user creds courtesy of github.com/owenshaupt
+        let password = "hailsatan".split(''); 
         this.addUsername(user, password, e);
     }
 

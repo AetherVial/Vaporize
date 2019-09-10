@@ -13,6 +13,9 @@ class SignupForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentWillUnmount() {
+        this.props.clearAllErrors();
+    }
 
     update(field) {
         return e => this.setState({
@@ -29,7 +32,7 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul class="errors">
+            <ul className="errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error: ${i}`}>
                         {error}
@@ -101,7 +104,7 @@ class SignupForm extends React.Component {
                             />
                         <br />
                         <br />
-                        <input class="login-user-button" 
+                        <input className="login-user-button" 
                         type="submit" value={this.props.formType} />
                     </div>
                 </form>

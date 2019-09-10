@@ -2,7 +2,7 @@
 #
 # Table name: playlists
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  title      :string
 #  user_id    :integer
 #  created_at :datetime         not null

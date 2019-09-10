@@ -43,7 +43,7 @@ class Greeting extends React.Component {
             <div id="navBar-header"><img src="assets/PBIcon.png" />
                 <div id="apptitle">Vaporize</div>
             </div>
-            <Link to="/" className="sidebar-el">
+            <Link to="/browse" className="sidebar-el">
                 <SVGUtil.browse />
                 Home</Link>
             <div className="sidebar-el">
