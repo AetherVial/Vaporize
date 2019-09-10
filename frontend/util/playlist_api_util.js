@@ -6,10 +6,10 @@ export const fetchPlaylists = (userId) => {
     })
 }
 
-export const fetchPlaylist = playlist => {
+export const fetchPlaylist = id => {
     return $.ajax({
         method: 'GET',
-        url: `/api/playlists/${playlist.id}`
+        url: `/api/playlists/${id}`
     })
 }
 

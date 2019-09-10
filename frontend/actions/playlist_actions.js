@@ -13,9 +13,9 @@ const receivePlaylist = playlist => ({
     playlist
 });
 
-const removePlaylist = playlistId => ({
+const removePlaylist = id => ({
     type: REMOVE_PLAYLIST,
-    data: playlistId
+    data: id
 });
 
 export const fetchPlaylists = (userId) => dispatch => (

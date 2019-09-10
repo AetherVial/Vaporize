@@ -13,7 +13,7 @@ export const playlistReducer = (state = {}, action) => {
             return Object.assign({}, state, action.playlist);
         case REMOVE_PLAYLIST:
             let newState = Object.assign({}, state);
-            delete newState[action.playlist.id];
+            delete newState[action.data];
             return newState;
         default:
             return state;

@@ -10,14 +10,14 @@ class SidebarPlaylists extends React.Component {
 
     componentDidUpdate(prevProps) {
         if(Object.values(prevProps.playlists) === Object.values(this.props.playlists)) {
-           this.props.fetchPlaylists().then(console.log("hello walker!"))
+           this.props.fetchPlaylists();
         }
     }
 
     loadModal(e) {
         e.preventDefault();
         const modal = document.getElementById("myModal");
-        const btn = document.getElementById("myBtn");
+        // const btn = document.getElementById("myBtn");
         const span = document.getElementsByClassName("close")[0];
         let x = document.getElementById("myModal").style;
         if (x.display == "" || x.display == 'none') {

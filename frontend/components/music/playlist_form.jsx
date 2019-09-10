@@ -17,25 +17,34 @@ class PlaylistForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let close = document.getElementsByClassName("close");
-        $(close).click();
         this.props.action(this.state)
-            .then(() => this.props.history.push(`/`))
+            .then(() => this.props.history.push(`/`));
+        this.setState({
+            title: ''
+        })
+        $(close).click();
     }
 
     render() {
         return(
             <div id="myModal" className="modal">
-                <h1>Create new playlist</h1>
+                <div id="modal-header">
+                <h1>Enter Playlist Name:</h1>
+                </div>
                 <div className="modal-content">
                     <form onSubmit={this.handleSubmit} >
                         <label>
-                            <input type="text"
+                            <input 
+                                    className = "modal-input"
+                                    placeholder='Start typing...'
+                                    type="text"
                                     value={this.state.title}
                                     onChange={this.update('title')}/>
                         </label>
-                    <input type="submit" value={this.props.formType}/>
+                        <br></br>
+                    <input id="modal-btn" type="submit" value={this.props.formType}/>
+                    <div id="modal-btn" className="close">Close</div>
                     </form>
-                    <span className="close">Cancel</span>
                 </div>
             </div>
         )

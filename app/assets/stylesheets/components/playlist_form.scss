@@ -12,18 +12,60 @@
 
 .modal-content {
   display: flex;
-  justify-content: space-around;
-  background-color: rgb(40, 40, 40);
-  color: lightgray;
-  margin: 15% auto; 
-  padding: 20px;
+  justify-content: center;
   width: 100%;
+  background-color: #282828;
+  height: 65px;
+  padding-top: 10px;
 }
 
-.close {
-  font-size: 28px;
+.modal-input {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -.005em;
+  text-align: center;
   font-weight: bold;
+  color: #fff;
+  text-transform: none;
+  caret-color: #eb61ed;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(0,0,0,0);
 }
+
+#modal-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 17.5%;
+  margin-left: 40%;
+  margin-right: 40%;
+  font-size: 30px;
+}
+
+#modal-btn {
+    border: 3px solid #eb61ed;
+    font-size: 11px;
+    line-height: 16px;
+    color: #eb61ed;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    display: inline-block;
+    text-align: center;
+    border-radius: 500px;
+    padding: 13px;
+    width: 130px;
+    white-space: normal;
+    line-height: 1.6;
+    margin: 20px 30px;
+    background: transparent;
+}
+
+#modal-btn:hover {
+  border: 3px solid #fff;
+  font-size: 11px;
+  color: #fff;
+}
+
 
 .close:hover,
 .close:focus {

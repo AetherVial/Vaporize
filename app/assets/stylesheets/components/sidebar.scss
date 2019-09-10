@@ -38,8 +38,9 @@
 }
 
 .list-header {
-    padding: 24px;
+    padding: 24px 0px 0px 24px;
     letter-spacing: 2px;
+    font-size: 15px;
 }
 
 .sidebar-el:hover {
@@ -48,15 +49,12 @@
 }
 
 .sidebar-list {
+    top: 10px;
     display: flex;
-    margin: 0;
     font-family: 'Proxima-Nova';
     align-items: left;
     text-align: left;
-    padding-left: 24px;
-    padding-right: 24px;
     height: 60%;
-    margin-top: 24px;
     border: 3px solid red;
 
 }

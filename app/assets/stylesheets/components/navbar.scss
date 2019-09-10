@@ -44,7 +44,7 @@
     white-space: nowrap;
 }
 
-li > a:hover {
+#menu > li > a:hover {
     color: rgb(112, 192, 219);
 }
 
@@ -74,6 +74,6 @@ li:hover .nav-stack {
 }
 
 .nav-stack > li {
-    margin-top: 5px;
+  margin-top: 5px;
   color: white;
 }
