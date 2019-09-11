@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className= "session-form">
-                <div id="login-logo"><img src="assets/PBIcon.png" />
+                <div id="login-logo"><img src={window.PBURL} />
                     <div id="apptitle">Vaporize</div>
                 </div>
                 <br />

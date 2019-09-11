@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SplashBody = () => (
 <div>
         <header className="navbar">
-            <div id="logo"><img src="assets/PBIcon.png" /><div id="apptitle">Vaporize</div></div>
+            <div id="logo"><img src={window.PBURL} /><div id="apptitle">Vaporize</div></div>
 
             <nav className="nav-right">
                 <ul id="menu">

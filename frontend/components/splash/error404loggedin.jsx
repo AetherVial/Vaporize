@@ -5,7 +5,7 @@ class Error404logged extends React.Component {
     render() {
         return (
             <div className="error">
-                <img className="yui404" src="assets/yui404" />
+                <img className="yui404" src={window.YUI} />
                 <Link id="modal-btn" to="/browse">Back to home!</Link>
             </div>
         )

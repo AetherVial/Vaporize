@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <div><img src="assets/PBWhiteBg.png"/>
+                <div><img src={window.PBBig}/>
                 </div>
                 <br />
                 <Link to="/login" className="demo-user-button">Log In Instead</Link>

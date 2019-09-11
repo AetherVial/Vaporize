@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" href="assets/PBIcon.png">
+    <script type="text/javascript">
+      window.PBURL = "<%= image_url('PBIcon.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.YUI = "<%= image_url('yui404.gif') %>";
+    </script>
+    <script type="text/javascript">
+      window.PBBig = "<%= image_url('PBWhiteBg.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.PROXIMA = "<%= asset_url('FontsFree-Net-Proxima-Nova-Bold.ttf')%>"
+    </script>
+    
     <title>Vaporize</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

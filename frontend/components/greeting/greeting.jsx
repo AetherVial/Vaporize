@@ -40,7 +40,7 @@ class Greeting extends React.Component {
 
     const loggedinLinks = () => (
         <nav className="navBar">
-            <div id="navBar-header"><img src="assets/PBIcon.png" />
+            <div id="navBar-header"><img src={window.PBURL} />
                 <div id="apptitle">Vaporize</div>
             </div>
             <Link to="/browse" className="sidebar-el">
