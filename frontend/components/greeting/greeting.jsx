@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SidebarPlaylistsContainer from './sidebar_playlists_container';
-import NewPlaylistContainer from '../music/new_playlist_container';
+import NewPlaylistContainer from '../music/playlist/new_playlist_container';
 import * as SVGUtil from '../../util/svg_util'
 
 class Greeting extends React.Component {
@@ -16,7 +16,6 @@ class Greeting extends React.Component {
     loadModal(e) {
         e.preventDefault();
         const modal = document.getElementById("myModal");
-        // const btn = document.getElementById("myBtn");
         const span = document.getElementsByClassName("close")[0];
         let x = document.getElementById("myModal").style;
         if (x.display == "" || x.display == 'none') {
@@ -43,12 +42,14 @@ class Greeting extends React.Component {
             <div id="navBar-header"><img src={window.PBURL} />
                 <div id="apptitle">Vaporize</div>
             </div>
-            <Link to="/browse" className="sidebar-el">
+            <NavLink to="/browse" className="sidebar-el"
+                activeClassName="selected">
                 <SVGUtil.browse />
-                Home</Link>
-            <div className="sidebar-el">
+                    Home</NavLink>
+            <NavLink to="/search" className="sidebar-el"
+                activeClassName="selected">
                 <SVGUtil.search />
-                Search</div>
+                Search</NavLink>
             <div className="sidebar-el">
                 <SVGUtil.library />
                 Your Library</div>

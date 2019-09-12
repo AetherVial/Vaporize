@@ -1,15 +1,18 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import BrowseContainer from './music/browse_container';
+import BrowseContainer from './music/browse/browse_container';
 import MusicBar from "./music/musicbar";
-import PlaylistShowContainer from "./music/playlist_show_container";
+import PlaylistShowContainer from "./music/playlist/playlist_show_container";
 import GreetingContainer from './greeting/greeting_container';
 import Error404logged from "./splash/error404loggedin";
 import SplashBody from './splash/splash_body';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Error404 from "./splash/error404";
+import Search from "./search/search";
+import ArtistShowContainer from "./music/artist/artist_show_container"
+import AlbumShowContainer from "./music/album/album_show_container"
 
 
 const App = () => (
@@ -22,8 +25,11 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         
+        <ProtectedRoute exact path="/search" component={Search} />
         <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
         <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+        <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
+        <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
 
         <ProtectedRoute path="/" component={Error404logged} />
         <AuthRoute path="/" component={Error404} />

@@ -8,7 +8,7 @@ const receiveAllPlaylists = playlists => ({
     playlists
 });
 
-const receivePlaylist = playlist => ({
+export const receivePlaylist = playlist => ({
     type: RECEIVE_PLAYLIST,
     playlist
 });

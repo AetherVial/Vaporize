@@ -1,14 +1,30 @@
-.playlist_show {
-    background: rgb(0,212,255);
-    background: linear-gradient(135deg, rgba(0,212,255,1) 0%, rgba(0,0,0,1) 71%);
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    padding-left: 250px;
-    // font-family: "Proxima-Nova";
-    color: lightgrey;
-    display: block;
-    height: 100vh;
-    padding-top: 45px;
+.playlist-show {
+  height: 100%;
+  width: 100%;
+  background: rgb(40,40,40)
+}
+
+.playlist-show-container {
+background: linear-gradient(135deg, rgba(0,212,255,1) 0%, rgba(0,0,0,1) 71%);
+  padding-left: 220px;
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playlists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlist-title {
+  font-weight: 700;
+  color: white;
+  font-size: 36px;
+  margin-top: 20px;
 }
 

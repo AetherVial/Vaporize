@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TrackIndexContainer from './track_index_container';
+import TrackIndexContainer from '../track/track_index_container';
 
 class PlaylistShow extends React.Component {
     constructor(props) {
@@ -28,14 +28,15 @@ class PlaylistShow extends React.Component {
     render() {
         if (!this.props.playlist) return null;
         return (
-            <div className="playlist_show">
-                <h3>{this.props.playlist.title}</h3>
-                <button id="modal-btn" onClick={this.handleClick}>Delete Playlist</button>
-                <TrackIndexContainer />
+            <div className="playlist-show">
+                <div className="playlist-show-container">
+                    <h3 className="playlist-title">{this.props.playlist.title}</h3>
+                    <button onClick={this.handleClick}>Delete Playlist</button>
+                    <TrackIndexContainer />
+                </div>
             </div>
-
-        );
+            );
+        }
     }
-}
-
-export default PlaylistShow;
+    
+    export default PlaylistShow;

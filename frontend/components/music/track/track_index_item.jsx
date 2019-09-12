@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTrack } from '../../actions/track_actions';
+import { fetchTrack } from '../../../actions/track_actions';
 import {withRouter} from "react-router-dom"
 
 class TrackIndexItem extends React.Component {
@@ -8,7 +8,6 @@ class TrackIndexItem extends React.Component {
         super(props)
     }
     render() {
-        console.log(this.props.track)
         const { track } = this.props;
         if (!track) {
             return (
@@ -17,18 +16,19 @@ class TrackIndexItem extends React.Component {
         }
         
         return(
+
             <li key={this.props.track.id} className="song-index-item">
-                <div>
+                <div className="song-index-categories">
                     {this.props.track.title}
-                </div>
-                <div>
                     {this.props.track.artistName}
-                </div>
-                <div>
                     {this.props.track.albumName}
-                </div>  
-                
-            </li>
+                </div>
+                <div className="song-index-categories">
+                    Dropdown in here!
+                    Time Goes Here!
+                </div>
+            </li>      
+
 
         )
     }

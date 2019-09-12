@@ -4,7 +4,6 @@ import SidebarIndexItem from './sidebar_index_item';
 class SidebarPlaylists extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {playlists: this.props.playlists};
     }
 
     componentDidUpdate(prevProps) {

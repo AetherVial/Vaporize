@@ -5,12 +5,17 @@
     height: 87.5vh;
     width: 210px;
     color: lightgray;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgb(0, 0, 0);
     cursor: pointer;
     z-index: 1;
     position: fixed;
     // font-family: 'Proxima-Nova';
     font-size: 12px;
+}
+
+.selected {
+    border-left: 4px solid rgb(230, 94, 198);
+    color: rgb(230, 94, 198);
 }
 
 #navBar-header {
@@ -25,15 +30,14 @@
 
 .sidebar-el {
     display: flex;
-    margin: 0;
     padding-left: 24px;
-    padding-bottom: 10px;
-    border: 0;
-    outline: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     // font-family: 'Proxima-Nova';
-    align-items: center;
+    vertical-align: text-bottom;
     text-align: center;
     background: transparent;
+    width: 210px;
 }
 
 .list-header {
@@ -50,6 +54,7 @@
 .sidebar-list {
     top: 10px;
     display: flex;
+    width: 90%;
     // font-family: 'Proxima-Nova';
     align-items: left;
     text-align: left;

@@ -6,9 +6,14 @@ class TrackIndex extends React.Component{
         super(props)
     }
 
+    componentDidUpdate(prevProps) {
+        if (Object.values(prevProps.tracks) === Object.values(this.props.tracks)) {
+            this.props.fetchTracks();
+        }
+    }
+
     render() {
         const { tracks } = this.props;
-        console.log(tracks)
         if (!tracks) {
             return (
                 null
@@ -32,8 +37,7 @@ class TrackIndex extends React.Component{
         });
 
         return(
-            <div>
-            <h1>playlist index :D</h1>
+            <div className="playlists">
             <ul>{list}</ul>
             </div>
         )
