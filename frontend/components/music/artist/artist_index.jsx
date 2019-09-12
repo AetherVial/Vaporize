@@ -33,7 +33,7 @@ class ArtistIndex extends React.Component {
             //     key={artist.id}
             //     playlist={playlist}
             // />)
-            return (<Link to={`artists/${artist.id}`}>{artist.name}</Link>)
+            return (<Link key={artist.id+artist.name} to={`artists/${artist.id}`}>{artist.name}</Link>)
         })
 
         return (

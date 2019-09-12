@@ -7,7 +7,7 @@ class TrackIndex extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        if (Object.values(prevProps.tracks) === Object.values(this.props.tracks)) {
+        if (prevProps.tracks === this.props.tracks) {
             this.props.fetchTracks();
         }
     }
@@ -20,7 +20,8 @@ class TrackIndex extends React.Component{
             );
         }
 
-        const list = Object.values(tracks).map((track, idx) => {
+        const list = tracks.map((track, idx) => {
+            if (!track) return null;
             let key;
             if (!this.props.tracks) {
                 key = Math.random();
@@ -32,6 +33,8 @@ class TrackIndex extends React.Component{
                     key={key}
                     track={track}
                     idx={idx + 1}
+                    playlistId = {this.props.playlistId}
+                    removeTrack = {this.props.removeTrackFromPlaylist}
                 />
             );
         });

@@ -10,7 +10,7 @@ export const trackReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_TRACKS:
-            return action.tracks;
+            return Object.assign({}, state, action.tracks)
         case RECEIVE_TRACK:
             return Object.assign({}, state, {[action.track.id]: action.track});
         case CLEAR_TRACKS:

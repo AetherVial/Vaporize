@@ -16,7 +16,7 @@ class PlaylistShow extends React.Component {
         if (prevProps.playlist && this.props.match.params.playlistId != prevProps.playlist.id) {
             this.props.fetchPlaylist(this.props.match.params.playlistId)
             this.props.fetchTracks(this.props.match.params.playlistId)
-        }
+        } 
     }
 
     handleClick(e) {
@@ -26,13 +26,16 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        if (!this.props.playlist) return null;
+        if (!this.props.playlist || !this.props.playlist.trackIds) return null;
         return (
             <div className="playlist-show">
                 <div className="playlist-show-container">
                     <h3 className="playlist-title">{this.props.playlist.title}</h3>
                     <button onClick={this.handleClick}>Delete Playlist</button>
-                    <TrackIndexContainer />
+                    <TrackIndexContainer 
+                    playlistId={this.props.match.params.playlistId}
+                    trackIds={this.props.playlist.trackIds}
+                    />
                 </div>
             </div>
             );

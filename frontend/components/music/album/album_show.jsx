@@ -19,12 +19,12 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        if (!this.props.album) return null;
+    if (!this.props.album || !this.props.album.trackIds) return null;
         return (
             <div className="artist-show">
                 <div className="artist-show-container">
                     <h3>{this.props.album.title}</h3>
-                    <TrackIndexContainer />
+                    <TrackIndexContainer trackIds={this.props.album.trackIds}/>
                 </div>
             </div>
         );

@@ -19,12 +19,12 @@ class ArtistShow extends React.Component {
     }
 
     render() {
-        if (!this.props.artist) return null;
+        if (!this.props.artist || !this.props.artist.trackIds) return null;
         return (
             <div className="artist-show">
                 <div className="artist-show-container">
                     <h3 className="playlist-title">{this.props.artist.name}</h3>
-                    <TrackIndexContainer />
+                    <TrackIndexContainer trackIds={this.props.artist.trackIds}/>
                 </div>
             </div>
         );

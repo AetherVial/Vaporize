@@ -4,6 +4,10 @@ export const currentUserPlaylists = (state) => (
     })
 );
 
+export const selectTracks = (state, trackIds) => (
+    trackIds.map(id => state.entities.tracks[id])
+)
+
 // export const currentPlaylistTracks = (state, ownProps) => {
 //     Object.values(state.entities.tracks).filter(track => {
 //         playlist.trackIds.includes(id)

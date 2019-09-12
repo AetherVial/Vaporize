@@ -7,6 +7,12 @@ class TrackIndexItem extends React.Component {
     constructor(props) {
         super(props)
     }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.removeTrack(this.props.playlistId, this.props.track.id)
+    }
+
     render() {
         const { track } = this.props;
         if (!track) {
@@ -27,6 +33,7 @@ class TrackIndexItem extends React.Component {
                     Dropdown in here!
                     Time Goes Here!
                 </div>
+                <button onClick={this.handleDelete.bind(this)}>Delete Me!</button>
             </li>      
 
 
