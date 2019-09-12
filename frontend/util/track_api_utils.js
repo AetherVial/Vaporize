@@ -1,13 +1,14 @@
-export const fetchTracks = () => {
+export const fetchTracks = (playlist_id) => {
     return $.ajax({
         method: 'GET',
-        url: '/api/tracks'
+        url: '/api/tracks',
+        data: { playlist_id }
     })
 }
 
 export const fetchTrack = id => {
     return $.ajax({
         method: 'GET',
-        url: `/api/trackss/${id}`
+        url: `/api/tracks/${id}`
     })
 }

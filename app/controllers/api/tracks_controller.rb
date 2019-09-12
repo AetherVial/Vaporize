@@ -1,6 +1,11 @@
 class Api::TracksController < ApplicationController
     def index 
-        @tracks = Track.all
+        playlist = Playlist.find_by(id: params[:playlist_id])
+        if (playlist)
+            @tracks = playlist.tracks
+        else
+            @tracks = Track.all
+        end
         render :index
     end
 
@@ -11,6 +16,6 @@ class Api::TracksController < ApplicationController
     private
 
     def artist_params
-        params.require(:track).permit(:title, :artist_id, :album_id)
+        params.require(:track).permit(:title, :artist_id, :album_id, :playlist_id)
     end
 end

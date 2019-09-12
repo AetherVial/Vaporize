@@ -19,7 +19,7 @@ const removePlaylistTrack = id => ({
 });
 
 export const fetchPlaylistTracks = (playlistId) => dispatch => (
-    PlaylistTrackApiUtils.fetchPlaylists(playlistId).then(playlist_tracks => dispatch(receiveAllPlaylistTracks(playlist_tracks)))
+    PlaylistTrackApiUtils.fetchPlaylistTracks(playlistId).then(playlist_tracks => dispatch(receiveAllPlaylistTracks(playlist_tracks)))
 );
 
 export const fetchPlaylistTrack = id => dispatch => {
@@ -27,7 +27,7 @@ export const fetchPlaylistTrack = id => dispatch => {
 };
 
 export const createPlaylistTrack = playlist_track => dispatch => (
-    PlaylistTrackApiUtils.createPlaylist(playlist_track).then(playlist_track => dispatch(receivePlaylistTrack(playlist_track)))
+    PlaylistTrackApiUtils.createPlaylistTrack(playlist_track).then(playlist_track => dispatch(receivePlaylistTrack(playlist_track)))
 );
 
 export const deletePlaylist = playlist_trackId => dispatch => (

@@ -1,6 +1,6 @@
-import * as APIUtil from "../util/session_api_util";
 
-import { RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ALL_ERRORS} from "../actions/session_actions";
+
+import { RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ALL_ERRORS} from "../../actions/session_actions";
 
 let _nullState = {
   errors: []

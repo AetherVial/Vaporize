@@ -1,7 +1,12 @@
 import {
     RECEIVE_ALL_TRACKS,
     RECEIVE_TRACK,
-} from "../actions/track_actions";
+    CLEAR_TRACKS,
+} from "../../actions/track_actions";
+import { RECEIVE_PLAYLIST } from "../../actions/playlist_actions";
+
+let _nullState = {};
+
 
 export const trackReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,6 +15,8 @@ export const trackReducer = (state = {}, action) => {
             return action.tracks;
         case RECEIVE_TRACK:
             return Object.assign({}, state, action.track);
+        case CLEAR_TRACKS:
+            return _nullState;
         default:
             return state;
     }

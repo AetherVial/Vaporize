@@ -1,7 +1,7 @@
 import {
     RECEIVE_ALL_ALBUMS,
     RECEIVE_ALBUM,
-} from "../actions/album_actions";
+} from "../../actions/album_actions";
 
 export const albumReducer = (state = {}, action) => {
     Object.freeze(state);

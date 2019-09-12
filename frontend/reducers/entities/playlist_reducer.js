@@ -2,7 +2,7 @@ import {
     RECEIVE_ALL_PLAYLISTS,
     RECEIVE_PLAYLIST,
     REMOVE_PLAYLIST
-} from "../actions/playlist_actions";
+} from "../../actions/playlist_actions";
 
 export const playlistReducer = (state = {}, action) => {
     Object.freeze(state);

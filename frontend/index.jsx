@@ -27,6 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchTracks = fetchTracks;
     window.fetchTrack = fetchTrack;
 
-
     ReactDOM.render(<Root store={store}/>, root);
 });

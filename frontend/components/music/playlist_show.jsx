@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {fetchPlaylist} from '../../actions/playlist_actions';
+import TrackIndexContainer from './track_index_container';
 
 class PlaylistShow extends React.Component {
     constructor(props) {
@@ -8,13 +8,15 @@ class PlaylistShow extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount() {
-        fetchPlaylist(this.props.match.params.playlistId)
+        this.props.fetchPlaylist(this.props.match.params.playlistId)
+        this.props.fetchTracks(this.props.match.params.playlistId)
     }
 
-    componentDidUpdate(prevProps) {
-        // if (prevProps.playlist.id != this.props.match.params.playlistId) {
-        //     this.props.fetchPlaylist(this.props.match.params.playlistId);
-        // }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.playlist && this.props.match.params.playlistId != prevProps.playlist.id) {
+            this.props.fetchPlaylist(this.props.match.params.playlistId)
+            this.props.fetchTracks(this.props.match.params.playlistId)
+        }
     }
 
     handleClick(e) {
@@ -24,13 +26,14 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        // try returning null if this.props.playlist is undefined
-        // let id = this.props.playlist && this.props.playlist.title
+        if (!this.props.playlist) return null;
         return (
             <div className="playlist_show">
-                <h3>hello: {this.props.playlist && this.props.playlist.title}</h3>
+                <h3>{this.props.playlist.title}</h3>
                 <button id="modal-btn" onClick={this.handleClick}>Delete Playlist</button>
+                <TrackIndexContainer />
             </div>
+
         );
     }
 }

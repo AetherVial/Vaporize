@@ -1,7 +1,5 @@
 import React from 'react';
-import NewPlaylistContainer from '../music/new_playlist_container';
 import SidebarIndexItem from './sidebar_index_item';
-import * as SVGUtil from "../../util/svg_util";
 
 class SidebarPlaylists extends React.Component {
     constructor(props) {

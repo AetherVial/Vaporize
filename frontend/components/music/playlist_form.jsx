@@ -17,8 +17,14 @@ class PlaylistForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let close = document.getElementsByClassName("close");
-        this.props.action(this.state)
-            .then(() => this.props.history.push(`/browse`));
+        if (this.state.title !== '') {
+            const playlist = Object.assign({}, this.state);
+            this.props.action(playlist).then(
+                newPlaylist => {
+                    let id = (Object.values(newPlaylist.playlist)[0].id)
+                    this.props.history.push(`/playlists/${id}`)
+                })
+        }
         this.setState({
             title: ''
         })

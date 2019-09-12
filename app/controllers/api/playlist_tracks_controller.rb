@@ -1,6 +1,6 @@
 class Api::PlaylistTracksController < ApplicationController
     def index
-        @playlists_tracks = PlaylistTrack.all
+        @playlist_tracks = PlaylistTrack.all
         render :index
     end
 

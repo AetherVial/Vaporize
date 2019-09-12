@@ -1,7 +1,7 @@
 import {
     RECEIVE_ALL_ARTISTS,
     RECEIVE_ARTIST,
-} from "../actions/artist_actions";
+} from "../../actions/artist_actions";
 
 export const artistReducer = (state = {}, action) => {
     Object.freeze(state);
