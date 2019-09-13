@@ -19,13 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
-    //TESTING
-    window.store= store;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.removeTrackFromPlaylist = removeTrackFromPlaylist;
-    window.addTrackToPlaylist = addTrackToPlaylist;
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdowns = document.getElementsByClassName("dropdown-content");
+            let i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 
     ReactDOM.render(<Root store={store}/>, root);
 });

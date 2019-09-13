@@ -19,11 +19,17 @@ class AlbumShow extends React.Component {
     }
 
     render() {
+
     if (!this.props.album || !this.props.album.trackIds) return null;
         return (
-            <div className="artist-show">
-                <div className="artist-show-container">
-                    <h3>{this.props.album.title}</h3>
+            <div className="playlist-show">
+                <div className="playlist-show-container">
+                    <div className="playlist-info">
+                        <div className="cover-art">
+                            <img className="cover" src="assets/yachtzee.jpg" />
+                        </div>
+                        <h3 className="playlist-title">{this.props.album.album.title}</h3>
+                    </div>
                     <TrackIndexContainer trackIds={this.props.album.trackIds}/>
                 </div>
             </div>

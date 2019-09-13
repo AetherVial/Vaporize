@@ -30,8 +30,14 @@ class PlaylistShow extends React.Component {
         return (
             <div className="playlist-show">
                 <div className="playlist-show-container">
-                    <h3 className="playlist-title">{this.props.playlist.title}</h3>
-                    <button onClick={this.handleClick}>Delete Playlist</button>
+                    <div className="playlist-info">
+                        <div className="cover-art">
+                            <img className="cover" src="assets/yachtzee.jpg"/>
+                        </div>
+                        
+                        <h3 className="playlist-title">{this.props.playlist.title}</h3>
+                    </div>
+                    {/* <button onClick={this.handleClick}>Delete Playlist</button> */}
                     <TrackIndexContainer 
                     playlistId={this.props.match.params.playlistId}
                     trackIds={this.props.playlist.trackIds}

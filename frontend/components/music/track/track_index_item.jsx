@@ -10,7 +10,13 @@ class TrackIndexItem extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
+        console.log("hello")
         this.props.removeTrack(this.props.playlistId, this.props.track.id)
+    }
+
+    drop(e) {
+        e.preventDefault();
+        document.getElementById("myDropdown").classList.toggle("show");
     }
 
     render() {
@@ -25,15 +31,21 @@ class TrackIndexItem extends React.Component {
 
             <li key={this.props.track.id} className="song-index-item">
                 <div className="song-index-categories">
-                    {this.props.track.title}
-                    {this.props.track.artistName}
-                    {this.props.track.albumName}
+                    <ul>
+                        <h2 className="song-title">{this.props.track.title}</h2>
+                        <li>{this.props.track.artistName} &bull; {this.props.track.albumName}</li>
+                    </ul>
                 </div>
                 <div className="song-index-categories">
-                    Dropdown in here!
-                    Time Goes Here!
+                    <div className="dropdown">
+                        {/* <button onClick={this.drop.bind(this)} className="dropbtn">Dropdown</button> */}
+                            <ul id="myDropdown" className="dropdown-content">
+                                <li>
+                                    <button className="temp" onClick={this.handleDelete.bind(this)}>Delete Me!</button>
+                                </li>
+                            </ul>
+                    </div>
                 </div>
-                <button onClick={this.handleDelete.bind(this)}>Delete Me!</button>
             </li>      
 
 
