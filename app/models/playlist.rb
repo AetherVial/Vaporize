@@ -13,6 +13,8 @@ class Playlist < ApplicationRecord
     validates :title, presence: true
     belongs_to :user
 
+    has_one_attached :photo
+    
     has_many :playlist_tracks
 
     has_many :tracks,

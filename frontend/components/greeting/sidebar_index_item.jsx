@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const SidebarIndexItem = ({ playlist }) => { //deletePlaylist
     return (
         
         <li className="sidebar-el">
-            <Link to={`/playlists/${playlist.id}`}>
+            <NavLink activeClassName="selected" to={`/playlists/${playlist.id}`}>
                 {playlist.title}
-            </Link>
+            </NavLink>
         </li>);
 };
 

@@ -15,7 +15,7 @@ class PlaylistShow extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.playlist && this.props.match.params.playlistId != prevProps.playlist.id) {
             this.props.fetchPlaylist(this.props.match.params.playlistId)
-            this.props.fetchTracks(this.props.match.params.playlistId)
+            // this.props.fetchTracks(this.props.match.params.playlistId)
         } 
     }
 
@@ -26,7 +26,9 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        if (!this.props.playlist || !this.props.playlist.trackIds) return null;
+        if (!this.props.playlist || !this.props.playlist.trackIds) {
+            return <div className="playlist-show-container"></div>
+        };
         return (
             <div className="playlist-show">
                 <div className="playlist-show-container">
@@ -36,8 +38,8 @@ class PlaylistShow extends React.Component {
                         </div>
                         
                         <h3 className="playlist-title">{this.props.playlist.title}</h3>
+                        <button id="modal-btn" onClick={this.handleClick}>Delete Playlist</button>
                     </div>
-                    {/* <button onClick={this.handleClick}>Delete Playlist</button> */}
                     <TrackIndexContainer 
                     playlistId={this.props.match.params.playlistId}
                     trackIds={this.props.playlist.trackIds}

@@ -2,13 +2,14 @@
 import { connect } from "react-redux";
 import Search from './search';
 import { withRouter } from "react-router"
-import {search} from '../../actions/search_actions';
+import {clearSearch, search} from '../../actions/search_actions';
 
 //const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => {
     return {
-        search: (query) => dispatch(search(query))
+        search: (query) => dispatch(search(query)),
+        clearSearch: () => dispatch(clearSearch())
     };
 };
 

@@ -40,6 +40,8 @@
 
 .playing-bar {
     position: relative;
+    display: flex;
+    justify-content: center;
     height: 9.75vh;
     min-height: 80px;
     width: 50%;

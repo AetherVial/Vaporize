@@ -9,10 +9,14 @@ class Search extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.clearSearch();
+    }
+
     update(field) {
         return e => {
             this.setState({[field]: e.currentTarget.value});
-            if (this.state.query.length >= 2) {
+            if (this.state.query.length >= 1) {
                 this.props.search(e.currentTarget.value)
             }
         }

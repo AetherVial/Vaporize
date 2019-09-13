@@ -25,3 +25,10 @@
   caret-color: #eb61ed;
   box-sizing: border-box;
 }
+
+.search-fail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10%;
+}

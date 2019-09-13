@@ -70,4 +70,30 @@
 
 .errors {
     color: red;
+    font-size: 12px;
+}
+
+#signup-user-instead {
+    text-align: center;
+    background-color: teal;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 500px;
+    width: 400px;
+    padding: 16px 18px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 10px 10px 10px 10px;
+}
+
+.signup-icon {
+    height: 20vh;
+    width: 25vh;
 }

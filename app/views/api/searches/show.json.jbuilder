@@ -26,6 +26,10 @@ json.set! "tracks" do
     @tracks.each do |track|
         json.set! track.id do
             json.extract! track, :id, :title, :album_id, :artist_id
+            
+            json.artistName track.artist.name
+  
+            json.albumName track.album.title
         end
     end
 end

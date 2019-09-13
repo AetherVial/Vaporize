@@ -4,7 +4,6 @@ import { fetchPlaylist, deletePlaylist } from '../../../actions/playlist_actions
 import { fetchTracks, clearTracks } from '../../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("im rendering")
     return {
         playlist: state.entities.playlists[ownProps.match.params.playlistId],
         }

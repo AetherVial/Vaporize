@@ -13,11 +13,8 @@ class TrackIndexItem extends React.Component {
         this.props.removeTrack(this.props.playlistId, this.props.track.id)
     }
 
-
-
     handleAdd(e) {
-        e.preventDefault();
-        
+        e.preventDefault();        
     }
 
     drop(e) {
@@ -42,10 +39,10 @@ class TrackIndexItem extends React.Component {
                 null
             );
         }
-        
+    
         return(
 
-            <li key={this.props.track.id} className="song-index-item" onClick={this.select.bind(this)}>
+            <li key={this.props.track.id + this.props.track.artistName} className="song-index-item" onClick={this.select.bind(this)}>
                 <div className="song-index-categories">
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>

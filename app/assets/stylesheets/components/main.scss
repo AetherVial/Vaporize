@@ -10,6 +10,7 @@
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    // background: linear-gradient(135deg, rgba(0,212,255,1) 0%, rgba(0,0,0,1) 71%);
 }
 
 .main {
@@ -60,6 +61,10 @@ body {
     background-color: rgb(112, 192, 219);
     transition: background-color 0.25s;
     // font-family: 'Proxima-Nova';
+}
+
+.main-content-3:hover {
+    background-color:rgb(49,128,210);
 }
 
 #logo > a:hover {

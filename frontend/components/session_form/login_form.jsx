@@ -1,5 +1,6 @@
 import React from 'react';
 import clearAllErrors from "../../actions/session_actions";
+import {Link} from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -102,6 +103,9 @@ class LoginForm extends React.Component {
                             />
                         <br></br>
                         <input className="login-user-button" type="submit" value={this.props.formType} />
+                        <br/>
+                        <br/>
+                        <Link to="/signup" id="signup-user-instead">Don't have an account? Sign Up Instead.</Link>
                     </div>
                 </form>
             </div>

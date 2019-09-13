@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <div><img src={window.PBBig}/>
+                <div><img className="signup-icon" src={window.PBBig}/>
                 </div>
                 <br />
                 <Link to="/login" className="demo-user-button">Log In Instead</Link>
@@ -53,7 +53,6 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     Welcome to Vaporize!
                 <br />
-                    Please sign up!
                     {this.renderErrors()}
                     <div>
                         <br />
