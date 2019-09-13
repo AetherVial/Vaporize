@@ -26,7 +26,7 @@ const App = () => (
 
             <ProtectedRoute exact path="/search" component={search_container} />
             <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
-            <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+            <ProtectedRoute path="/browse" component={BrowseContainer} />
             <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
             <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
             <ProtectedRoute exact path="/artists" component={ArtistIndexContainer} />

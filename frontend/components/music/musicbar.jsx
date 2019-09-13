@@ -19,12 +19,16 @@ class MusicBar extends React.Component {
                             Hello my name is artist-info
                         </div>
                 </div>
+                <div className="song-stuff">
+                <div className="buttons">
+                    <a href="#">back</a>
+                    <a href="#">Play/Pause</a>
+                    <a href="#">ff</a>
+                </div>
                 <div className="playing-bar">
-                    <button id="audioControl">Hello There!</button>
-                    <audio id="music!"
-                    src={window.Song} type="audio/mp3">
-                        Your browser hates this
-                    </audio>
+                    <div className="start"></div>
+                    <div className="progress"></div>
+                </div>
                 </div>
                 <div className="volume-rocker">
                     hi my name is volume

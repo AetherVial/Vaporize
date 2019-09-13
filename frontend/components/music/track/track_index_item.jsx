@@ -50,14 +50,17 @@ class TrackIndexItem extends React.Component {
                     </ul>
                 </div>
                 <div className="song-index-categories">
-                    <div className="dropdown">
-                        {/* <button onClick={this.drop.bind(this)} className="dropbtn">Dropdown</button> */}
-                            <ul id="myDropdown" className="dropdown-content">
+
+                        {/* <input id="check02" type="checkbox" name="menu" /> */}
+                        Track Menu
+                            {/* <ul class="submenu">
+                                <li><a href="#">Sotto menu 3 (long text)</a></li>
+                                <li><a href="#">Sotto menu 4</a></li>
+                                <li><a href="#">Sotto menu 5</a></li>
                                 <li>
                                     <button className="temp" onClick={this.handleDelete.bind(this)}>Delete Me!</button>
                                 </li>
-                            </ul>
-                    </div>
+                            </ul> */}
                 </div>
             </li>      
 

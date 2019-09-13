@@ -3,7 +3,6 @@
     width: 100vw;
     height: 100vh;
     z-index: 0;
-    // font-family: "Proxima-Nova";
     color: lightgrey;
 }
 
@@ -26,4 +25,44 @@
 .page {
     display: flex;
     flex-direction: row;
+}
+
+.tabs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 210px;
+    width: calc(100vw - 220px);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.nav-tabs {
+  width: 100%;
+  padding: 20px 20px;
+}
+
+.tabs {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.tabs > li {
+  display: inline-block;
+  font-size: 12px;
+  margin: 10px;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+}
+
+.tabs > li:hover {
+  color: rgb(255, 255, 255);
+}
+
+.selectedTab {
+    border-bottom: 2px solid pink;
 }

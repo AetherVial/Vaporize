@@ -41,15 +41,36 @@
 .playing-bar {
     position: relative;
     display: flex;
-    justify-content: center;
     height: 9.75vh;
     min-height: 80px;
     width: 50%;
     min-width: 350px;
     overflow: hidden;
-    background-color: rgb(40,40,40);
-    border: 3px solid blue;
+    color: #aaaaaa;
+    font-size: 11px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
+
+// .start {
+//     position: absolute;
+//     // border: 3px solid red;
+//     height: 5px;
+//     // padding: 0 15px;
+//     border-radius: 5px;
+//     // background-color: aqua;
+// }    
+
+.progress {
+    display: flex;
+    bottom: 5px;
+    border: 3px solid red;
+    height: 5px;
+    // padding: 0 15px;
+    border-radius: 5px;
+    width: 10000px;
+}    
 
 .volume-rocker {
     height: 9.75vh;
@@ -57,4 +78,11 @@
     width: 25%;
     min-width: 0;
     border: 3px solid yellow;
+}
+
+.song-stuff {
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    border: 3px solid red;
 }
