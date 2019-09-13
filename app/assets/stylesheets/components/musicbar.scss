@@ -1,9 +1,56 @@
 .musicBar {
+    display: flex;
     bottom: 0;
     position: fixed;
     height: 9.75vh;
+    min-height: 90px;
     width: 100vw;
     border-top: 2px solid black;
     z-index: 3;
-    background-color: rgb(40,40,40)
+    background-color: rgb(40,40,40);
+    color: lightgrey;
+}
+
+.now-playing-info {
+    height: 9.75vh;
+    min-height: 90px;
+    width: 25%;
+    min-width: 25%;
+    overflow: hidden;
+    border: 3px solid red;
+    display: flex;
+    align-items: center;
+    padding-left: calc(9.75vh - 60px)
+}
+
+.music-info {
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.info-song-title {
+    font-size: 14px;
+    font-weight: 1;
+}
+
+.now-playing-info > img {
+    height: 60px;
+    width: 60px;
+}
+
+.playing-bar {
+    height: 9.75vh;
+    min-height: 80px;
+    width: 50%;
+    min-width: 50%;
+    overflow: hidden;
+    border: 3px solid blue;
+}
+
+.volume-rocker {
+    height: 9.75vh;
+    min-height: 80px;
+    width: 25%;
+    min-width: 0;
+    border: 3px solid yellow;
 }

@@ -10,8 +10,14 @@ class TrackIndexItem extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
-        console.log("hello")
         this.props.removeTrack(this.props.playlistId, this.props.track.id)
+    }
+
+
+
+    handleAdd(e) {
+        e.preventDefault();
+        
     }
 
     drop(e) {
@@ -21,6 +27,11 @@ class TrackIndexItem extends React.Component {
 
     select(e) {
         e.preventDefault();
+        // console.log(this.props.currentUserPlaylists)
+        // let list = document.getElementsByClassName("song-index-item")
+        // list.forEach(el => {
+        //     el.classList.remove("selected-song")
+        // })
         e.currentTarget.classList.toggle('selected-song')
     }
 

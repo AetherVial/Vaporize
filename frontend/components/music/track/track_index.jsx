@@ -6,11 +6,11 @@ class TrackIndex extends React.Component{
         super(props)
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.tracks === this.props.tracks) {
-            this.props.fetchTracks();
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     // if (prevProps.tracks.length != this.props.tracks.length) {
+    //     //     this.props.fetchTracks();
+    //     // }
+    // }
 
     render() {
         const { tracks } = this.props;
@@ -35,6 +35,8 @@ class TrackIndex extends React.Component{
                     idx={idx + 1}
                     playlistId = {this.props.playlistId}
                     removeTrack = {this.props.removeTrackFromPlaylist}
+                    addTrack = {this.props.addTrackToPlaylist}
+                    currentUserPlaylists = {this.props.currentUserPlaylists}
                 />
             );
         });

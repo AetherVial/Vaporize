@@ -28,11 +28,7 @@ class AlbumIndex extends React.Component {
         }
 
         let list = albums.map(album => {
-            // return (<SidebarIndexItem
-            //     key={album.id}
-            //     playlist={playlist}
-            // />)
-            return <li key={album.id}>{album.title}</li>
+            return <li key={album.id + album.title}>{album.title}</li>
         })
 
         return (

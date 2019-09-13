@@ -10,10 +10,10 @@ import SplashBody from './splash/splash_body';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Error404 from "./splash/error404";
-import Search from "./search/search";
-import ArtistShowContainer from "./music/artist/artist_show_container"
-import AlbumShowContainer from "./music/album/album_show_container"
-
+import ArtistShowContainer from "./music/artist/artist_show_container";
+import AlbumShowContainer from "./music/album/album_show_container";
+import ArtistIndexContainer from "./music/artist/artist_index_container";
+import search_container from "./search/search_container";
 
 const App = () => (
     <div className="page">
@@ -25,11 +25,12 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         
-        <ProtectedRoute exact path="/search" component={Search} />
+        <ProtectedRoute exact path="/search" component={search_container} />
         <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
         <ProtectedRoute exact path="/browse" component={BrowseContainer} />
         <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
+        <ProtectedRoute exact path="/artists" component={ArtistIndexContainer} />
 
         <ProtectedRoute path="/" component={Error404logged} />
         <AuthRoute path="/" component={Error404} />

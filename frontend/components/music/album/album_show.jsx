@@ -12,7 +12,7 @@ class AlbumShow extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.album && this.props.match.params.albumId != prevProps.album.id) {
+        if (prevProps.album && this.props.match.params.albumId != prevProps.album.album.id) {
             this.props.fetchAlbum(this.props.match.params.albumId)
             this.props.fetchTracksByAlbum(this.props.match.params.albumId)
         }

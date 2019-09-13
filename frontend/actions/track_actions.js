@@ -49,6 +49,3 @@ export const removeTrackFromPlaylist = (playlistId, trackId) => dispatch => {
     return TrackApiUtils.removeTrackFromPlaylist(playlistId, trackId)
         .then(updatedPlaylist => dispatch(receivePlaylist(updatedPlaylist)));
 };
-
-
-

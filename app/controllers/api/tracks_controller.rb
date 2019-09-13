@@ -32,7 +32,9 @@ class Api::TracksController < ApplicationController
         @track = Track.find(params[:id])
         if @track
             @playlist.track_ids += [params[:id]]
-            render 'api/tracks/show'
+          #  render 'api/tracks/show'
+        #   render 'api/playlists/show'
+        render json: ["Track added!"], status: 200;
         end
     end
 
