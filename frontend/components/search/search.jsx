@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SearchResults from './search_results';
 class Search extends React.Component {
 
     constructor(props) {
@@ -26,8 +26,8 @@ class Search extends React.Component {
                 className="search-bar"
                 placeholder="Start typing..."
                 onChange={this.update('query')}
-                
-                ></input>
+                />
+            <SearchResults />
         </div>
         )
     }

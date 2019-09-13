@@ -16,11 +16,11 @@
     min-height: 90px;
     width: 25%;
     min-width: 25%;
-    overflow: hidden;
-    border: 3px solid red;
     display: flex;
     align-items: center;
-    padding-left: calc(9.75vh - 60px)
+    padding-left: calc(9.75vh - 60px);
+    white-space: nowrap;
+    text-overflow: ellipsis; 
 }
 
 .music-info {
@@ -39,11 +39,13 @@
 }
 
 .playing-bar {
+    position: relative;
     height: 9.75vh;
     min-height: 80px;
     width: 50%;
-    min-width: 50%;
+    min-width: 350px;
     overflow: hidden;
+    background-color: rgb(40,40,40);
     border: 3px solid blue;
 }
 
