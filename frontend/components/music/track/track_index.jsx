@@ -19,7 +19,7 @@ class TrackIndex extends React.Component{
                 null
             );
         }
-
+        
         const list = tracks.map((track, idx) => {
             if (!track) return null;
             let key;

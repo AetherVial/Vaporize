@@ -27,7 +27,6 @@
   padding-top: 5%;
   align-items: center;
   flex-direction: column;
-  border: 3px solid red;
 }
 
 .playlists {
@@ -46,6 +45,14 @@
     color: white;
     font-size: 15px;
     padding: 15px;
+}
+
+.song-index-item:hover {
+  background-color: rgba(0,0,0,.5)
+}
+
+.selected-song {
+  background-color: rgba(0,0,0,.5)
 }
 
 .song-index-categories {
@@ -69,10 +76,10 @@
 .cover-art {
   height: 30vh;
   width: 30vh;
+  overflow: hidden;
 }
 
 .cover {
-  display: flex;
   height: 100%;
   width: 100%;
   border-radius: 50%;

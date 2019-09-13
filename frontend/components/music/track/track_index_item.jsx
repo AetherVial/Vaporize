@@ -19,6 +19,11 @@ class TrackIndexItem extends React.Component {
         document.getElementById("myDropdown").classList.toggle("show");
     }
 
+    select(e) {
+        e.preventDefault();
+        e.currentTarget.classList.toggle('selected-song')
+    }
+
     render() {
         const { track } = this.props;
         if (!track) {
@@ -29,7 +34,7 @@ class TrackIndexItem extends React.Component {
         
         return(
 
-            <li key={this.props.track.id} className="song-index-item">
+            <li key={this.props.track.id} className="song-index-item" onClick={this.select.bind(this)}>
                 <div className="song-index-categories">
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>
