@@ -5,14 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+# require 'open-uri'
 User.destroy_all
 Playlist.destroy_all
 Artist.destroy_all
 Album.destroy_all
 Track.destroy_all
 PlaylistTrack.destroy_all
-
+require 'open-uri'
 
 user1 = User.create(username: "DemoUser", password: "hailsatan", first_name: "foo", last_name: "bar", email: "foobar@demo.com")
 user2 = User.create(username: "MegaloBox", password: "12345678", first_name: "Joe", last_name: "the Boxer", email: "box@joesgym.io")
@@ -26,14 +26,37 @@ artist3 = Artist.create(name: "YUI")
 artist4 = Artist.create(name: "All Time Low")
 artist5 = Artist.create(name: "Anberlin")
 
-album1 = Album.create(title: "Don't Think Twice", artist_id: 1)
-album2 = Album.create(title: "Sakuragaoka Keionbu", artist_id: 2)
-album3 = Album.create(title: "Singing! - Single", artist_id: 2)
-album4 = Album.create(title: "No, Thank You! - Single", artist_id: 2)
-album5 = Album.create(title: "Nothing Personal", artist_id: 4)
-album6 = Album.create(title: "Rolling Star - Single", artist_id: 3)
-album7 = Album.create(title: "Never Take Friendship Personal", artist_id: 5)
-album8 = Album.create(title: "Future Hearts", artist_id: 4)
+album1 = Album.create(title: "Don't Think Twice", artist_id: artist1.id)
+cover = open('/Users/stantonhuang/Desktop/albumarts/dontthinktwice.jpg')
+album1.photo.attach(io: cover, filename: 'dontthinktwice.jpg')
+
+album2 = Album.create(title: "Hokago Tea Time II", artist_id: artist2.id)
+cover2 = open('/Users/stantonhuang/Desktop/albumarts/HO-KAGO_TEA_TIME_Second.jpg')
+album2.photo.attach(io: cover2, filename: 'teatime.jpg')
+
+album3 = Album.create(title: "Singing! - Single", artist_id: artist2.id)
+cover3 = open('/Users/stantonhuang/Desktop/albumarts/Singing!_Song_Cover.jpg')
+album3.photo.attach(io: cover3, filename: 'singing.jpg')
+
+album4 = Album.create(title: "No, Thank You! - Single", artist_id: artist2.id)
+cover4 = open('/Users/stantonhuang/Desktop/albumarts/nothankyou.png')
+album4.photo.attach(io: cover4, filename: 'nothankyou.png')
+
+album5 = Album.create(title: "Nothing Personal", artist_id: artist4.id)
+cover5 = open('/Users/stantonhuang/Desktop/albumarts/Alltimelownothingpersonal.jpg')
+album5.photo.attach(io: cover5, filename: 'nothingpersonal.png')
+
+album6 = Album.create(title: "Rolling Star - Single", artist_id: artist3.id)
+cover6 = open('/Users/stantonhuang/Desktop/albumarts/Yuirollingstar.jpg')
+album6.photo.attach(io: cover6, filename: 'rollingstar.jpg')
+
+album7 = Album.create(title: "Never Take Friendship Personal", artist_id: artist5.id)
+cover7 = open('/Users/stantonhuang/Desktop/albumarts/nvrtakefriendshippersonal.jpg')
+album7.photo.attach(io: cover7, filename: 'nvrtkfrshp.jpg')
+
+album8 = Album.create(title: "Future Hearts", artist_id: artist5.id)
+cover8 = open('/Users/stantonhuang/Desktop/albumarts/futurehearts.jpg')
+album8.photo.attach(io: cover8, filename: 'futurehearts.jpg')
 
 playlist1 = Playlist.create(title: "Kingdom Hearts", user_id: 1)
 playlist2 = Playlist.create(title: "K-ON!", user_id: 4)

@@ -26,7 +26,7 @@ class AlbumShow extends React.Component {
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">
-                            <img className="cover" src={window.Yacht} />
+                            <img className="cover" src={this.props.album.album.photoUrl} />
                         </div>
                         <h3 className="playlist-title">{this.props.album.album.title}</h3>
                     </div>

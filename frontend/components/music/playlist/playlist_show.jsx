@@ -15,7 +15,7 @@ class PlaylistShow extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.playlist && this.props.match.params.playlistId != prevProps.playlist.id) {
             this.props.fetchPlaylist(this.props.match.params.playlistId)
-            // this.props.fetchTracks(this.props.match.params.playlistId)
+            this.props.fetchTracks(this.props.match.params.playlistId)
         } 
     }
 
@@ -26,9 +26,7 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        if (!this.props.playlist || !this.props.playlist.trackIds) {
-            return <div className="playlist-show-container"></div>
-        };
+        if (!this.props.playlist || !this.props.playlist.trackIds) return null;
         return (
             <div className="playlist-show">
                 <div className="playlist-show-container">
