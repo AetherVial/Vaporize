@@ -1,3 +1,6 @@
+import { combineReducers } from "redux";
+import queueReducer from "./queue_reducer";
+
 // let _nullState = {
 //     current_track: null,
 //     queue: []
@@ -14,3 +17,7 @@
 //             return state;
 //     }
 // };
+
+export default combineReducers({
+    queue: queueReducer
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchAlbums, clearAlbums } from '../../../actions/album_actions';
+import { fetchAlbums } from '../../../actions/album_actions';
 import AlbumIndex from "./album_index";
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchAlbums: () => dispatch(fetchAlbums()),
-    clearAlbums: () => dispatch(clearAlbums())
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AlbumIndex));

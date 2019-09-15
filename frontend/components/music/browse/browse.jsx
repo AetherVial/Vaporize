@@ -1,6 +1,8 @@
 import React from 'react';
 import ArtistIndexContainer from '../artist/artist_index_container';
-import {NavLink} from 'react-router-dom';
+import AlbumIndexContainer from '../album/album_index_container';
+import PlaylistIndexContainer from '../playlist/playlist_index_container';
+import {NavLink, Route} from 'react-router-dom';
 
 class Browse extends React.Component {
     constructor(props) {
@@ -21,6 +23,9 @@ class Browse extends React.Component {
                         </ul>
                     </nav>
                 </div>
+                <Route exact path="/browse/albums" component={AlbumIndexContainer} />
+                {/* <ProtectedRoute exact path="browse/artists" component={ArtistIndexContainer} /> */}
+                <Route exact path="/browse/playlists" component={PlaylistIndexContainer} />
             </div>
         )
     }

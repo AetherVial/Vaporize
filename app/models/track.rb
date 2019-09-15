@@ -16,7 +16,7 @@ class Track < ApplicationRecord
     belongs_to :artist
     belongs_to :album
 
-    has_one_attached :track_file
+    has_one_attached :audio
 
     has_many :playlist_tracks
 

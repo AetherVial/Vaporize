@@ -6,6 +6,7 @@ import {withRouter} from "react-router-dom"
 class TrackIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.handlePlay = this.handlePlay.bind(this)
     }
 
     handleDelete(e) {
@@ -15,6 +16,10 @@ class TrackIndexItem extends React.Component {
 
     handleAdd(e) {
         e.preventDefault();        
+    }
+
+    handlePlay(e) {
+        this.props.fetchCurrentTrack(this.props.track.id)
     }
 
     drop(e) {
@@ -50,7 +55,7 @@ class TrackIndexItem extends React.Component {
                     </ul>
                 </div>
                 <div className="song-index-categories">
-
+                    <button onClick={this.handlePlay}>Play!</button>
                         {/* <input id="check02" type="checkbox" name="menu" /> */}
                         Track Menu
                             {/* <ul class="submenu">

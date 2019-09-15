@@ -8,7 +8,7 @@ export const playlistReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_PLAYLISTS:
-            return action.playlists;
+            return Object.assign({}, state, action.playlists);
         case RECEIVE_PLAYLIST:
             return Object.assign({}, state, action.playlist);
         case REMOVE_PLAYLIST:

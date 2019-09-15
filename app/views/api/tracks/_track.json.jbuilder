@@ -5,3 +5,5 @@ json.artistName track.artist.name
 json.albumName track.album.title
 
 json.playlist_ids track.playlists.pluck(:id)
+
+json.audioUrl url_for(track.audio)

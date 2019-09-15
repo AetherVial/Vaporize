@@ -37,6 +37,8 @@ class TrackIndex extends React.Component{
                     removeTrack = {this.props.removeTrackFromPlaylist}
                     addTrack = {this.props.addTrackToPlaylist}
                     currentUserPlaylists = {this.props.currentUserPlaylists}
+                    fetchCurrentTrack = {this.props.fetchCurrentTrack}
+                    receiveCurrentTrack = {this.props.receiveCurrentTrack}
                 />
             );
         });

@@ -1,4 +1,5 @@
 import React from 'react';
+import AlbumIndexItemContainer from './album_index_item';
 
 class AlbumIndex extends React.Component {
     constructor(props) {
@@ -7,16 +8,6 @@ class AlbumIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAlbums();
-    }
-
-    componentDidUpdate(prevProps) {
-        if (Object.values(prevProps.albums) === Object.values(this.props.albums)) {
-            this.props.fetchAlbums();
-        }
-    }
-
-    componentWillUnmount() {
-        this.props.clearAlbums();
     }
 
     render() {
@@ -28,14 +19,19 @@ class AlbumIndex extends React.Component {
         }
 
         let list = albums.map(album => {
-            return <li key={album.id + album.title}>{album.title}</li>
+            return (
+            <li key={album.album.id}>
+                <AlbumIndexItemContainer album={album}/>
+            </li>
+            )
         })
 
         return (
             <div>
-                <h1 className="list-header">my name is albums</h1>
-                <br></br>
-                <ul>{list}</ul>
+                <h1 className="browse-header">All Albums</h1>
+                <ul className="browse-index">
+                {list}
+                </ul>
             </div>
 
         )

@@ -27,6 +27,7 @@ class PlaylistShow extends React.Component {
 
     render() {
         if (!this.props.playlist || !this.props.playlist.trackIds) return null;
+        // if (!this.props.playlist) return null;
         return (
             <div className="playlist-show">
                 <div className="playlist-show-container">
@@ -34,10 +35,10 @@ class PlaylistShow extends React.Component {
                         <div className="cover-art">
                             <img className="cover" src={window.Yacht}/>
                         </div>
-                        
                         <h3 className="playlist-title">{this.props.playlist.title}</h3>
                         <button id="modal-btn" onClick={this.handleClick}>Delete Playlist</button>
                     </div>
+
                     <TrackIndexContainer 
                     playlistId={this.props.match.params.playlistId}
                     trackIds={this.props.playlist.trackIds}

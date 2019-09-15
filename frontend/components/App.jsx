@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import BrowseContainer from './music/browse/browse_container';
-import MusicBar from "./music/musicbar";
+import MusicBarContainer from "./music/musicbar_container";
 import PlaylistShowContainer from "./music/playlist/playlist_show_container";
 import GreetingContainer from './greeting/greeting_container';
 import Error404logged from "./splash/error404loggedin";
@@ -11,13 +11,12 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import ArtistShowContainer from "./music/artist/artist_show_container";
 import AlbumShowContainer from "./music/album/album_show_container";
-import ArtistIndexContainer from "./music/artist/artist_index_container";
 import search_container from "./search/search_container";
 
 const App = () => (
     <div className="page">
         <GreetingContainer />
-        <ProtectedRoute path="/" component={MusicBar} />
+        <ProtectedRoute path="/" component={MusicBarContainer} />
     
         <Switch>
             <AuthRoute exact path="/" component={SplashBody} />
@@ -29,7 +28,6 @@ const App = () => (
             <ProtectedRoute path="/browse" component={BrowseContainer} />
             <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
             <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
-            <ProtectedRoute exact path="/artists" component={ArtistIndexContainer} />
 
             <ProtectedRoute path="/" component={Error404logged} />
             <AuthRoute path="/" component={SplashBody} />
