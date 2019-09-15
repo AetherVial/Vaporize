@@ -5,42 +5,48 @@ class MusicBar extends React.Component {
         super(props)
     }
 
-    // componentDidUpdate(prevProps) {
-        // console.log(this.props.currentlyPlaying)
-        // console.log(prevProps)
-        // if (this.props.currentlyPlaying && this.props.currentlyPlaying != prevProps.currentlyPlaying) {
-        // // let blah = this.props.currentlyPlaying.audioUrl
-        // // document.getElementById("player").src = blah;
-        // console.log("hola theo")
-        // }
-    // }
+    shouldComponentUpdate(nextProps) {
+        if (this.props.currentlyPlaying && this.props.currentlyPlaying === nextProps.currentlyPlaying) {
+            return false;
+        }
+        return true;
+    }
+
     
-
     render() {
-        console.log("im rerendering")
         let blah;
-
+        let title;
+        let artist;
+        let cover;
         if (!this.props.currentlyPlaying) {
             blah = null;
         } else {
            // this.props.fetchCurrentTrack(this.props.currentlyPlaying.id)
-            let blah = this.props.currentlyPlaying.audioUrl
-            
+            blah = this.props.currentlyPlaying.audioUrl;
+            title = this.props.currentlyPlaying.title;
+            artist = this.props.currentlyPlaying.artistName;
+            cover = this.props.currentlyPlaying.coverUrl;
             document.getElementById("player").src = blah;
             document.getElementById("player").load();
-            // document.getElementById("player").play();
+            document.getElementById("player").play();
+        }
+
+        if (cover) {
+            cover = <img src={cover}></img>
+        } else {
+            cover = <div></div>
         }
         return (
 
             <div className="musicBar">
                 <div className="now-playing-info">
-                    <img src={window.Yacht}></img>
+                    {cover}
                     <div className="music-info">
                         <p className="info-song-title">
-                            Hello my name is song-info
+                            {title}
                         </p>
                         <br/>
-                            {blah}
+                            {artist}
                         </div>
                 </div>
                 <div className="song-stuff">

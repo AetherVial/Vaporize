@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch) => ({
   //  fetchCurrentTrack: id => dispatch(fetchCurrentTrack(id)),
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MusicBar))
+export default withRouter(connect(mapStateToProps)(MusicBar))

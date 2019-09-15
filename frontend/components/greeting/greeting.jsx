@@ -42,7 +42,7 @@ class Greeting extends React.Component {
             <div id="navBar-header"><img src={window.PBURL} />
                 <div id="apptitle">Vaporize</div>
             </div>
-            <NavLink to="/browse" className="sidebar-el"
+            <NavLink exact to="/browse" className="sidebar-el"
                 activeClassName="selected">
                 <SVGUtil.browse />
                     Home</NavLink>
@@ -50,9 +50,10 @@ class Greeting extends React.Component {
                 activeClassName="selected">
                 <SVGUtil.search />
                 Search</NavLink>
-            <div className="sidebar-el">
+            <NavLink to="/browse/playlists" className="sidebar-el"
+                activeClassName="selected">
                 <SVGUtil.library />
-                Your Library</div>
+                Your Library</NavLink>
             <button onClick={this.loadModal} id="myBtn" className="sidebar-el">
                 <SVGUtil.plus />New Playlist</button>
             <NewPlaylistContainer />

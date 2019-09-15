@@ -23,6 +23,10 @@ const findTrackIndex = (trackList, trackId) => {
     return -1;
 };
 
+const makeQueue = (index, array) => {
+
+}
+
 const queueReducer = (state = _nullState, action) => {
     Object.freeze(state)
     let nextTrackId;
