@@ -26,15 +26,13 @@ class TrackIndex extends React.Component{
                 <TrackIndexItem
                     key={key}
                     track={track}
-                    idx={idx + 1}
-                    playlistId = {this.props.playlistId}
-                    artistId = {this.props.artistId}
-                    albumId = {this.props.albumId}
+                    tracks = {this.props.tracks}
                     removeTrack = {this.props.removeTrackFromPlaylist}
                     addTrack = {this.props.addTrackToPlaylist}
                     currentUserPlaylists = {this.props.currentUserPlaylists}
                     fetchCurrentTrack = {this.props.fetchCurrentTrack}
                     receiveCurrentTrack = {this.props.receiveCurrentTrack}
+                    receiveCurrentTrackList = {this.props.receiveCurrentTrackList}
                 />
             );
         });

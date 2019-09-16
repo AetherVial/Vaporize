@@ -21,11 +21,10 @@ class TrackIndexItem extends React.Component {
     }
 
     handlePlay(e) {
+        e.preventDefault();
         this.props.fetchCurrentTrack(this.props.track.id)
+        this.props.receiveCurrentTrackList(this.props.tracks)
     }
-
-    //this.props.fetchCurrentTrackList(this.props.track.id)
-    //use this.props.playlistId
 
     render() {
         const { track } = this.props;
@@ -37,7 +36,7 @@ class TrackIndexItem extends React.Component {
         return(
             <li key={this.props.track.id + this.props.track.artistName} className="song-index-item">
                 <div className="song-index-categories">
-                    <button id="track-play-btn" onClick={this.handlePlay}><img src={window.Play} alt="play"/></button>
+                    <button id="track-play-btn" onClick={this.handlePlay}><img src={window.Play}/></button>
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>
                         <li>{this.props.track.artistName} &bull; {this.props.track.albumName}</li>

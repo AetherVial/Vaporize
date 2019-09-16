@@ -12,7 +12,6 @@ const mapDispatchToProps = dispatch => {
         search: (query) => dispatch(search(query)),
         clearSearch: () => dispatch(clearSearch()),
         fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id))
-
     };
 };
 

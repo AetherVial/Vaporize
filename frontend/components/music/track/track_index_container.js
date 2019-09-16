@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 import TrackIndex from './track_index';
 import { selectTracks, currentUserPlaylists } from "../../../reducers/selectors"
 import { addTrackToPlaylist } from '../../../util/track_api_utils';
-import {receiveCurrentTrack, fetchCurrentTrack} from '../../../actions/queue_actions';
+import {receiveCurrentTrackList, fetchCurrentTrack} from '../../../actions/queue_actions';
 
 const mapStateToProps = (state, ownProps) => {
    return {
         tracks: selectTracks(state, ownProps.trackIds),
-        playlistId: ownProps.playlistId,
         currentUserPlaylists: currentUserPlaylists(state)
     }
 }
@@ -20,8 +19,8 @@ const mapDispatchToProps = dispatch => ({
     fetchTracks: id => dispatch(fetchTracks(id)),
     removeTrackFromPlaylist: (playlistId, id) => dispatch(removeTrackFromPlaylist(playlistId, id)),
     addTrackToPlaylist: (playlistId, id) => dispatch(addTrackToPlaylist(playlistId, id)),
-    receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track)),
-    fetchCurrentTrack: (trackId) => dispatch(fetchCurrentTrack(trackId))
+    fetchCurrentTrack: (trackId) => dispatch(fetchCurrentTrack(trackId)),
+    receiveCurrentTrackList: (tracks) => dispatch(receiveCurrentTrackList(tracks)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TrackIndex))

@@ -1,31 +1,89 @@
 import React from 'react';
+import * as SVGUtil from '../../util/svg_util';
 
 class MusicBar extends React.Component {
     constructor(props) {
         super(props)
+        this.handlePlayClick = this.handlePlayClick.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
+        this.renderTotalTime = this.renderTotalTime.bind(this);
+        this.handleNext = this.handleNext.bind(this)
     }
 
-    shouldComponentUpdate(nextProps) {
-        if (this.props.currentlyPlaying && this.props.currentlyPlaying === nextProps.currentlyPlaying) {
+    shouldComponentUpdate(nextProps, nextState) {
+        // console.log(this.props.currentlyPlaying)
+        // console.log(nextProps.currentlyPlaying)
+        if (this.props.currentlyPlaying && this.props.currentlyPlaying.id === nextProps.currentlyPlaying.id) {
             return false;
-        // } else if (this.props.playing != nextProps.playing) {
-        //     return false;
         } else if (!nextProps.playing) {
             return false;
         }
         return true;
     }
 
-    
+    handlePlayClick(e) {
+        e.preventDefault();
+        let player = document.getElementById("player")
+        let button = document.querySelector("play")
+
+
+        if (player.paused) {
+            player.play();
+        } else {
+            player.pause();
+        }
+    }
+
+    handleNext(e) {
+        e.preventDefault();
+        this.props.goNext();
+        this.props.fetchCurrentTrack(this.props.queue.queue[0].id);
+        // this.props.fetchCurrentTrack(this.props.queue.queue[0].id)
+        //     .then(() => this.props.goNext())
+    }
+
+
+    toggleMute(e) {
+        e.preventDefault();
+        let player = document.getElementById("player")
+        if (!player.muted) {
+            player.muted = true;
+        } else {
+            player.muted = false;
+        }
+    }
+
+    handleSlide(e) {
+        e.preventDefault();
+        
+    }
+
+    renderTotalTime() {
+        const player = document.getElementById('player');
+
+        if (player && player.duration) {
+            const duration = player.duration;
+            const total_minute = parseInt(duration / 60) % 60;
+            const total_seconds_long = duration % 60;
+            const total_seconds = total_seconds_long.toFixed();
+            const totalTime = (total_minute < 10 ? "0" + total_minute :
+                total_minute) + ":" + (total_seconds < 10 ? "0" + total_seconds : total_seconds);
+
+            return totalTime;
+        } else {
+            return '--:--';
+        }
+    }
+
     render() {
         let blah;
         let title;
         let artist;
         let cover;
+        let duration;
         if (!this.props.currentlyPlaying) {
             blah = null;
         } else {
-           // this.props.fetchCurrentTrack(this.props.currentlyPlaying.id)
             blah = this.props.currentlyPlaying.audioUrl;
             title = this.props.currentlyPlaying.title;
             artist = this.props.currentlyPlaying.artistName;
@@ -33,6 +91,26 @@ class MusicBar extends React.Component {
             document.getElementById("player").src = blah;
             document.getElementById("player").load();
             document.getElementById("player").play();
+
+            const audio = document.querySelector('audio')
+            const seekbar = document.querySelector('.seekbar')
+            const volBar = document.querySelector('.vol-control')
+            duration = parseInt(audio.duration / 60)
+
+            audio.addEventListener('timeupdate', () => {
+                seekbar.value = audio.currentTime / audio.duration * seekbar.max
+            })
+
+            seekbar.addEventListener('change', () => {
+                audio.currentTime = audio.duration * seekbar.value / seekbar.max
+            })
+
+            volBar.addEventListener('change', () => {
+                let x = volBar.value;
+                let y = x / 100;
+                audio.volume = y;
+            })
+            
         }
 
         if (cover) {
@@ -54,16 +132,20 @@ class MusicBar extends React.Component {
                         </div>
                 </div>
                 <div className="song-stuff">
-                {/* <div> */}
-                    <audio id="player" controls></audio>
-                {/* </div> */}
-                {/* <div className="playing-bar">
-                    <div className="start"></div>
-                    <div className="progress"></div>
-                </div> */}
+                    <div className="controls">
+                    <button className="back"><SVGUtil.rw /></button>
+                    <button className="play" onClick={this.handlePlayClick}><SVGUtil.play /></button>
+                    <button className="back" onClick={this.handleNext}>
+                        <SVGUtil.ff />
+                    </button>
+                    <audio id="player" onEnded={this.handleNext}></audio>
+                    </div>
+                    <input onChange={this.seek} className="seekbar" type="range" min="0" max="100" step="0.01"></input>
                 </div>
                 <div className="volume-rocker">
-                    hi my name is volume
+                    <button className="mute" onClick={this.toggleMute}>Mute!</button>
+                    <input className="vol-control" type="range" min="0" max="100" step="1"></input>
+                    <p>{this.renderTotalTime()}</p>
                 </div>
             </div>
         )
