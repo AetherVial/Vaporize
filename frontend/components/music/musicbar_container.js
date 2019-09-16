@@ -6,7 +6,8 @@ import MusicBar from './musicbar';
 
 const mapStateToProps = state => {
     return {
-        currentlyPlaying: state.ui.queue.currentlyPlaying
+        currentlyPlaying: state.ui.queue.currentlyPlaying,
+        playing: state.ui.queue.playing
         // playing: playing,
         // prevTracks: prevTracks,
         // queue: queue,

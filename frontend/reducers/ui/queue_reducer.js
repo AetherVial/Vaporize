@@ -35,6 +35,7 @@ const queueReducer = (state = _nullState, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_TRACK:
             newState.currentlyPlaying = action.track;
+            newState.playing = true;
             return newState;
         case RECEIVE_CURRENT_TRACK_LIST:
             newState.tracks = action.tracks;

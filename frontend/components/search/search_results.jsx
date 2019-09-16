@@ -26,7 +26,10 @@ class SearchResults extends React.Component {
         } else {
             if (this.props.tracks) {
                 trackList = Object.values(this.props.tracks).map(track => {
-                    return (<div key={Math.random()}><TrackIndexItem track={track} /><br/></div>)
+                    return (<div key={Math.random()}>
+                        <TrackIndexItem 
+                        track={track} 
+                        fetchCurrentTrack = {this.props.fetchCurrentTrack}/><br/></div>)
                 })
             }
             if (this.props.artists) {

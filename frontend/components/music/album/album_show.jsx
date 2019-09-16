@@ -29,6 +29,10 @@ class AlbumShow extends React.Component {
                             <img className="cover" src={this.props.album.album.photoUrl} />
                         </div>
                         <h3 className="playlist-title">{this.props.album.album.title}</h3>
+                        <h4 className="playlist-title">
+                            {this.props.album.album.artist.name}
+                        </h4>
+                        
                     </div>
                     <TrackIndexContainer trackIds={this.props.album.trackIds}/>
                 </div>

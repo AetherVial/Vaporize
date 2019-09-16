@@ -31,7 +31,8 @@ class Search extends React.Component {
                 placeholder="Start typing..."
                 onChange={this.update('query')}
                 />
-            <SearchResults />
+            <SearchResults 
+                fetchCurrentTrack={this.props.fetchCurrentTrack}/>
         </div>
         )
     }

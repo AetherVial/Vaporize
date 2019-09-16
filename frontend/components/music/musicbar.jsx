@@ -8,6 +8,10 @@ class MusicBar extends React.Component {
     shouldComponentUpdate(nextProps) {
         if (this.props.currentlyPlaying && this.props.currentlyPlaying === nextProps.currentlyPlaying) {
             return false;
+        // } else if (this.props.playing != nextProps.playing) {
+        //     return false;
+        } else if (!nextProps.playing) {
+            return false;
         }
         return true;
     }
@@ -50,13 +54,13 @@ class MusicBar extends React.Component {
                         </div>
                 </div>
                 <div className="song-stuff">
-                <div>
+                {/* <div> */}
                     <audio id="player" controls></audio>
-                </div>
-                <div className="playing-bar">
+                {/* </div> */}
+                {/* <div className="playing-bar">
                     <div className="start"></div>
                     <div className="progress"></div>
-                </div>
+                </div> */}
                 </div>
                 <div className="volume-rocker">
                     hi my name is volume

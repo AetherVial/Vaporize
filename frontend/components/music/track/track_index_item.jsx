@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTrack } from '../../../actions/track_actions';
-import {withRouter} from "react-router-dom"
+import {withRouter} from "react-router-dom";
+import * as SVGUtil from "../../../util/svg_util";
+import Dropdown from "./dropdown";
 
 class TrackIndexItem extends React.Component {
     constructor(props) {
@@ -22,20 +24,8 @@ class TrackIndexItem extends React.Component {
         this.props.fetchCurrentTrack(this.props.track.id)
     }
 
-    drop(e) {
-        e.preventDefault();
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    select(e) {
-        e.preventDefault();
-        // console.log(this.props.currentUserPlaylists)
-        // let list = document.getElementsByClassName("song-index-item")
-        // list.forEach(el => {
-        //     el.classList.remove("selected-song")
-        // })
-        e.currentTarget.classList.toggle('selected-song')
-    }
+    //this.props.fetchCurrentTrackList(this.props.track.id)
+    //use this.props.playlistId
 
     render() {
         const { track } = this.props;
@@ -44,28 +34,23 @@ class TrackIndexItem extends React.Component {
                 null
             );
         }
-    
         return(
-
-            <li key={this.props.track.id + this.props.track.artistName} className="song-index-item" onClick={this.select.bind(this)}>
+            <li key={this.props.track.id + this.props.track.artistName} className="song-index-item">
                 <div className="song-index-categories">
+                    <button id="track-play-btn" onClick={this.handlePlay}><img src={window.Play} alt="play"/></button>
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>
                         <li>{this.props.track.artistName} &bull; {this.props.track.albumName}</li>
                     </ul>
                 </div>
-                <div className="song-index-categories">
-                    <button onClick={this.handlePlay}>Play!</button>
-                        {/* <input id="check02" type="checkbox" name="menu" /> */}
-                        Track Menu
-                            {/* <ul class="submenu">
-                                <li><a href="#">Sotto menu 3 (long text)</a></li>
-                                <li><a href="#">Sotto menu 4</a></li>
-                                <li><a href="#">Sotto menu 5</a></li>
-                                <li>
-                                    <button className="temp" onClick={this.handleDelete.bind(this)}>Delete Me!</button>
-                                </li>
-                            </ul> */}
+                <div className="song-index-categories-2">
+                    <Dropdown
+                     currentUserId = {this.props.currentUserId}
+                     currentPlaylistId = {this.props.currentPlaylistId}
+                     currentTrackId = {this.props.track.id}
+                     />
+                    {/* <button id="drpdown-btn" ><SVGUtil.dots /></button> */}
+                    
                 </div>
             </li>      
 
@@ -75,20 +60,3 @@ class TrackIndexItem extends React.Component {
 }
 
 export default TrackIndexItem;
-// const mapStateToProps = (state, ownProps) => {
-    
-//     return {
-//         playlist: state.entities.playlists[ownProps.match.params.playlistId],
-//         tracks: state.entities.tracks,
-//         currentUser: state.session.currentUser,
-//         playlists: state.entities.playlists
-//     }
-// }
-
-// const mapDispatchToProps = dispatch => ({
-//     fetchTrack: id => dispatch(fetchTrack(id))
-// })
-
-
-
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TrackIndexItem));
