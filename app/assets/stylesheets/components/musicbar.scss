@@ -39,11 +39,13 @@
 }
 
 .volume-rocker {
+    display: flex;
+    align-items: center;
     height: 9.75vh;
     min-height: 80px;
-    width: 25%;
-    min-width: 0;
-    border: 3px solid yellow;
+    width: 10%;
+    min-width: 0px;
+    margin-left: 12%;
 }
 
 .song-stuff {
@@ -68,6 +70,7 @@
     background-color: transparent;
     height: 60px;
     width: 60px;
+    justify-content: flex-end;
 }
 
 .seekbar {
@@ -80,5 +83,60 @@
     display: flex;
 }
 
+.forward {
+    display: flex;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    justify-content: flex-start;
+}
 
+.e-range {
+  display: block;
+  appearance: none;
+  width: 100%;
+  margin: 0;
+//   height: $height;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 85%;
+      -webkit-appearance: none;
+      background-color: darkgray;
+      border-radius: 5px;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: rgb(219, 65, 182);
+      margin-top: -1px;
+
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 12px;
+      -webkit-appearance: none;
+      height: 12px;
+      cursor: ew-resize;
+      background: lightgray;
+      box-shadow: -400px 0 0 400px rgb(219, 65, 182);
+    }
+
+}
+
+.mute {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}

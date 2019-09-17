@@ -25,12 +25,12 @@ class MusicBar extends React.Component {
         e.preventDefault();
         let player = document.getElementById("player")
         let button = document.querySelector("play")
-
-
         if (player.paused) {
             player.play();
+            this.innerHtml = <SVGUtil.play />
         } else {
             player.pause();
+            this.innerHtml = <SVGUtil.pause />
         }
     }
 
@@ -38,8 +38,6 @@ class MusicBar extends React.Component {
         e.preventDefault();
         this.props.goNext();
         this.props.fetchCurrentTrack(this.props.queue.queue[0].id);
-        // this.props.fetchCurrentTrack(this.props.queue.queue[0].id)
-        //     .then(() => this.props.goNext())
     }
 
 
@@ -134,8 +132,8 @@ class MusicBar extends React.Component {
                 <div className="song-stuff">
                     <div className="controls">
                     <button className="back"><SVGUtil.rw /></button>
-                    <button className="play" onClick={this.handlePlayClick}><SVGUtil.play /></button>
-                    <button className="back" onClick={this.handleNext}>
+                        <button className="play" onClick={this.handlePlayClick}><SVGUtil.play /></button>
+                    <button className="forward" onClick={this.handleNext}>
                         <SVGUtil.ff />
                     </button>
                     <audio id="player" onEnded={this.handleNext}></audio>
@@ -143,9 +141,9 @@ class MusicBar extends React.Component {
                     <input onChange={this.seek} className="seekbar" type="range" min="0" max="100" step="0.01"></input>
                 </div>
                 <div className="volume-rocker">
-                    <button className="mute" onClick={this.toggleMute}>Mute!</button>
+                    <button className="mute" onClick={this.toggleMute}><SVGUtil.mute /></button>
                     <input className="vol-control" type="range" min="0" max="100" step="1"></input>
-                    <p>{this.renderTotalTime()}</p>
+                    {/* <p>{this.renderTotalTime()}</p> */}
                 </div>
             </div>
         )

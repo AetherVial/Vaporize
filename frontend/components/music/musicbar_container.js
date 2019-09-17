@@ -9,11 +9,6 @@ const mapStateToProps = state => {
         currentlyPlaying: state.ui.queue.currentlyPlaying,
         playing: state.ui.queue.playing,
         queue: state.ui.queue
-        // playing: playing,
-        // prevTracks: prevTracks,
-        // queue: queue,
-        // trackList: trackList,
-        // tracks: tracks
     }
 }
 

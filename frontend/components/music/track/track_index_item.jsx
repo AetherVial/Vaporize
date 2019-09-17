@@ -5,6 +5,19 @@ import {withRouter} from "react-router-dom";
 import * as SVGUtil from "../../../util/svg_util";
 import Dropdown from "./dropdown";
 
+const findTrackIndex = (trackList, trackId) => {
+    for (let i = 0; i < trackList.length; i++) {
+        if (trackList[i].id === trackId)
+            return i;
+    }
+    return -1;
+};
+
+const makeQueue = (index, array) => {
+    let temp = array.slice(index);
+    return temp.concat(array)
+}
+
 class TrackIndexItem extends React.Component {
     constructor(props) {
         super(props)
@@ -23,7 +36,10 @@ class TrackIndexItem extends React.Component {
     handlePlay(e) {
         e.preventDefault();
         this.props.fetchCurrentTrack(this.props.track.id)
-        this.props.receiveCurrentTrackList(this.props.tracks)
+        let i = findTrackIndex(this.props.tracks, this.props.track.id)
+        let q = makeQueue(i, this.props.tracks)
+        // this.props.receiveCurrentTrackList(this.props.tracks)
+        this.props.receiveCurrentTrackList(q)
     }
 
     render() {

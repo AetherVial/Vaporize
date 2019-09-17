@@ -16,18 +16,6 @@ let _nullState = {
     playing: false
 }
 
-const findTrackIndex = (trackList, trackId) => {
-    for (let i = 0; i < trackList.length; i++) {
-        if (trackList[i] === `${trackId}`)
-            return i;
-    }
-    return -1;
-};
-
-const makeQueue = (index, array) => {
-    return array.slice(index);    
-}
-
 const queueReducer = (state = _nullState, action) => {
     Object.freeze(state)
     let nextTrackId;
