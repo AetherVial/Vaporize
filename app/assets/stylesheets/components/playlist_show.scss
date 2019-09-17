@@ -10,9 +10,8 @@
   background-color: transparent;
   padding-left: 220px;
   height: calc(92vh);
-  width: calc(100% - 220px);
+  width: calc(100vw - 220px);
   display: flex;
-  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
@@ -25,7 +24,7 @@
 
 .playlist-info {
   display: flex;
-  width: 35%;
+  width: 25vw;
   padding-top: 2.5%;
   align-items: center;
   flex-direction: column;
@@ -33,7 +32,7 @@
 
 .playlists {
   display: flex;
-  width: 65%;
+  width:  60vw;
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: hidden scroll;
@@ -45,12 +44,16 @@
 }
 
 .cover-art {
-  height: 30vh;
-  width: 30vh;
+  height: 15vw;
+  width: 15vw;
+  min-height: 150px;
+  min-width: 150px;
   overflow: hidden;
 }
 
 .cover {
-  height: 100%;
-  width: 100%;
+  height: 15vw;
+  width: 15vw;
+  min-height: 150px;
+  min-width: 150px;
 }

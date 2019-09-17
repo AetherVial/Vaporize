@@ -141,6 +141,8 @@
     background-color: transparent;
 }
 
-// p {
-//     border: 3px solid red;
-// }
+.mute:hover, .back:hover, .play:hover, .forward:hover {
+    color: white;
+    text-shadow: 0 0 3px #FFF;
+}
+
