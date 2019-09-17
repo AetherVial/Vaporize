@@ -29,10 +29,6 @@ class TrackIndexItem extends React.Component {
         this.props.removeTrack(this.props.playlistId, this.props.track.id)
     }
 
-    handleAdd(e) {
-        e.preventDefault();        
-    }
-
     handlePlay(e) {
         e.preventDefault();
         this.props.fetchCurrentTrack(this.props.track.id)
@@ -63,15 +59,15 @@ class TrackIndexItem extends React.Component {
                 </div>
                 <div className="song-index-categories-2">
                     <Dropdown
-                     currentUserId = {this.props.currentUserId}
-                     currentPlaylistId = {this.props.currentPlaylistId}
-                     currentTrackId = {this.props.track.id}
-                     playlistId = {this.props.playlistId}
-                     playlistUser = {this.props.playlistUser}
-                     removeTrack = {this.props.removeTrack}
-                     />
-                    {/* <button id="drpdown-btn" ><SVGUtil.dots /></button> */}
-                    
+                    setupAdd={this.props.setupAdd}
+                    currentUserPlaylists = {this.props.currentUserPlaylists}
+                    currentUserId = {this.props.currentUserId}
+                    currentPlaylistId = {this.props.currentPlaylistId}
+                    currentTrackId = {this.props.track.id}
+                    playlistId = {this.props.playlistId}
+                    playlistUser = {this.props.playlistUser}
+                    removeTrack = {this.props.removeTrack}
+                    />
                 </div>
             </li>      
 

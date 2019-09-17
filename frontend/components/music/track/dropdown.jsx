@@ -7,15 +7,13 @@ import * as SVGUtil from '../../../util/svg_util';
 class Dropdown extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            open: false,
-        }
-        this.handleClick = this.handleClick.bind(this)
-        this.handleRemove = this.handleRemove.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handleClick(e) {
         e.stopPropagation();
+        $(`.dropdown-content`).removeClass("show-list")
         $(`.${this.props.currentTrackId}`).toggleClass("show-list")
     }
 
@@ -24,10 +22,7 @@ class Dropdown extends React.Component {
         this.props.removeTrack(this.props.playlistId, this.props.currentTrackId)
     }
 
-    
-
     render() {
-
         let list;
         if (this.props.currentUserId != this.props.playlistUser) {
             list =  
@@ -40,13 +35,13 @@ class Dropdown extends React.Component {
                
         } else {
             list =      
-                    <div>
-                        <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
-                        <ul className={`dropdown-content ${this.props.currentTrackId}`}>
-                            <li>Add to Playlist</li>
-                            <li onClick={this.handleRemove}>Remove from Playlist</li>
-                        </ul>
-                    </div> 
+                <div>
+                    <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
+                    <ul className={`dropdown-content ${this.props.currentTrackId}`}>
+                        <li onClick={() => this.props.setupAdd(this.props.currentTrackId)}>Add to Playlist</li>
+                        <li onClick={this.handleRemove}>Remove from Playlist</li>
+                    </ul>
+                </div> 
         }
         return (
             <div>
