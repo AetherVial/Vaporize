@@ -28,11 +28,11 @@ class ArtistIndex extends React.Component {
             );
         }
 
-        let list = artists.map(artist => {
-            return (<Link to={`/artists/${artist.id}`}           className="albumIndexItem">
+        let list = artists.map((artist, idx) => {
+            return (<Link key={artist.name+idx} to={`/artists/${artist.id}`} className="albumIndexItem">
                 <img className="artist-art-index" src={artist.photoUrl} />
                 {artist.name}
-            </Link>)
+                </Link>)
         })
 
         return (

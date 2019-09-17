@@ -1,19 +1,24 @@
 import React from 'react';
 import {withRouter} from "react-router-dom"
-import { fetchTrack, removeTrackFromPlaylist, fetchTracks } from "../../../actions/track_actions"
+import { fetchTrack, removeTrackFromPlaylist, fetchTracks, addTrackToPlaylist } from "../../../actions/track_actions"
 import { connect } from 'react-redux';
 import TrackIndex from './track_index';
 import { selectTracks, currentUserPlaylists } from "../../../reducers/selectors"
-import { addTrackToPlaylist } from '../../../util/track_api_utils';
 import {receiveCurrentTrackList, fetchCurrentTrack} from '../../../actions/queue_actions';
 
 const mapStateToProps = (state, ownProps) => {
-   return {
-        tracks: selectTracks(state, ownProps.trackIds),
+    let tracks;
+    if (ownProps.ParentType === "search") {
+        tracks = Object.values(state.search.tracks)
+    } else {
+        tracks = (selectTracks(state, ownProps.trackIds))
+    }
+    return {
+        tracks: tracks,
         currentUserPlaylists: currentUserPlaylists(state),
         playlistId: ownProps.playlistId,
         currentUserId: state.session.id
-    }
+}
 }
 
 const mapDispatchToProps = dispatch => ({

@@ -14,7 +14,7 @@ class Dropdown extends React.Component {
     handleClick(e) {
         e.stopPropagation();
         $(`.dropdown-content`).removeClass("show-list")
-        $(`.${this.props.currentTrackId}`).toggleClass("show-list")
+        $(`.${this.props.temp}`).toggleClass("show-list")
     }
 
     handleRemove(e) {
@@ -26,18 +26,17 @@ class Dropdown extends React.Component {
         let list;
         if (this.props.currentUserId != this.props.playlistUser) {
             list =  
-                    <div>
+                <div>
                     <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
-                    <ul className={`dropdown-content  ${this.props.currentTrackId}`}>
-                        <li>Add to playlist</li>
-                    </ul>
-            </div>
-               
+                        <ul className={`dropdown-content ${this.props.temp}`}>
+                            <li onClick={() => this.props.setupAdd(this.props.currentTrackId)}>Add to playlist</li>
+                        </ul>
+                </div>
         } else {
             list =      
                 <div>
                     <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
-                    <ul className={`dropdown-content ${this.props.currentTrackId}`}>
+                    <ul className={`dropdown-content ${this.props.temp}`}>
                         <li onClick={() => this.props.setupAdd(this.props.currentTrackId)}>Add to Playlist</li>
                         <li onClick={this.handleRemove}>Remove from Playlist</li>
                     </ul>

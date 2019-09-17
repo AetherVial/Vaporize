@@ -5,6 +5,9 @@ import {fetchPlaylist} from "../../actions/playlist_actions";
 import {fetchArtist} from "../../actions/artist_actions";
 import { connect } from 'react-redux';
 import TrackIndexItem from "../music/track/track_index_item"
+import TrackIndexContainer from '../music/track/track_index_container';
+import { searchTracks } from '../../reducers/selectors';
+import TrackIndex from '../music/track/track_index';
 
 class SearchResults extends React.Component {
     constructor(props) {
@@ -24,13 +27,20 @@ class SearchResults extends React.Component {
                 </div>
             ) 
         } else {
-            if (this.props.tracks) {
-                trackList = Object.values(this.props.tracks).map(track => {
-                    return (<div key={Math.random()}>
-                        <TrackIndexItem 
-                        track={track} 
-                        fetchCurrentTrack = {this.props.fetchCurrentTrack}/><br/></div>)
-                })
+            if (this.props.search.tracks) {
+                // console.log('rerender after search')
+                // const blah = searchTracks(this.props.search.tracks)
+                // console.log(searchTracks(this.props.search.tracks))
+                // trackList = <TrackIndexContainer tracks={blah}/>
+                // console.log(currentPlaylistTracks(this.props.tracks))
+                // trackList= Object.values(this.props.tracks).map((track, idx) => {
+                //         return (<div key={Math.random()}>
+                //         <TrackIndexItem
+                //         temp = {idx}
+                //         track= {track} 
+                //         fetchCurrentTrack = {this.props.fetchCurrentTrack}/><br/></div>)
+                // })
+                trackList = <TrackIndexContainer ParentType="search" trackIds={Object.keys(this.props.search.tracks).map(el => parseInt(el))} />
             }
             if (this.props.artists) {
                 artistList = Object.values(this.props.artists).map(artist => {
@@ -52,9 +62,9 @@ class SearchResults extends React.Component {
         return (   
             <div>
                 <h1>Matched Songs:</h1>
-                <ul>
+                {/* <ul> */}
                     {trackList}
-                </ul>
+                {/* </ul> */}
                 <h1>Matched Artists:</h1>
                 <ul>
                     {artistList}

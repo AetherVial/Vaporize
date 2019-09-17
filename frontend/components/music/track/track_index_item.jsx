@@ -59,6 +59,7 @@ class TrackIndexItem extends React.Component {
                 </div>
                 <div className="song-index-categories-2">
                     <Dropdown
+                    temp = {this.props.temp}
                     setupAdd={this.props.setupAdd}
                     currentUserPlaylists = {this.props.currentUserPlaylists}
                     currentUserId = {this.props.currentUserId}
