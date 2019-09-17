@@ -1,8 +1,11 @@
 .error {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    height: 100vh;
+    color: lightgray;
+    padding-left: 220px;
+    height: 90.5vh;
     width: 100vw;
     background-color: rgb(40,40,40);
     // font-family: "Proxima Nova"

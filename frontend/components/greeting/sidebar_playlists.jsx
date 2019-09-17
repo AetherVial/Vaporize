@@ -1,5 +1,6 @@
 import React from 'react';
-import SidebarIndexItem from './sidebar_index_item';
+// import SidebarIndexItem from './sidebar_index_item';
+import {NavLink} from 'react-router-dom';
 
 class SidebarPlaylists extends React.Component {
     constructor(props) {
@@ -14,17 +15,20 @@ class SidebarPlaylists extends React.Component {
 
     render() {
         let list = this.props.playlists.map(playlist => {
-            return (<SidebarIndexItem 
-                    key={playlist.id}
-                    playlist={playlist}
-                    />)
+            return (<li key={playlist.id + Math.random()}className="sidebar-el">
+                <NavLink activeClassName="selected" to={`/playlists/${playlist.id}`}>
+                    {playlist.title}
+                </NavLink>
+            </li>)
         })
 
         return(
             <div>
                 <h1 className="list-header">Playlists:</h1>
                 <br></br>
-                <ul>{list}</ul>
+                <ul>
+                {list}
+                </ul>
             </div>
            
         )

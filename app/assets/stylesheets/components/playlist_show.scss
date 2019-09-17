@@ -5,7 +5,9 @@
 }
 
 .playlist-show-container {
-  background: linear-gradient(155deg, rgba(0,212,255,1) 0%, rgb(220, 64, 181) 65%);
+  // background: linear-gradient(155deg, rgba(0,212,255,1) 0%, rgb(220, 64, 181) 65%);
+
+  background-color: transparent;
   padding-left: 220px;
   height: calc(92vh);
   width: calc(100% - 220px);

@@ -30,13 +30,13 @@
 
 .sidebar-el {
     display: flex;
+    align-items: center;
     padding-left: 24px;
     padding-top: 5px;
     padding-bottom: 5px;
-    vertical-align: text-bottom;
-    text-align: center;
     background: transparent;
     width: 80%;
+    font-size: 14px;
 }
 
 .list-header {

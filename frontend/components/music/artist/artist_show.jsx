@@ -25,7 +25,7 @@ class ArtistShow extends React.Component {
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">
-                            <img className="cover" src={window.Yacht} />
+                            <img className="cover" src={this.props.artist.photoUrl} />
                         </div>
 
                         <h3 className="playlist-title">{this.props.artist.name}</h3>

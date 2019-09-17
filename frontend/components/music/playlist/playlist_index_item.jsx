@@ -13,7 +13,7 @@ class PlaylistIndexItem extends React.Component {
             return null
         } else {
             return (
-                <Link to={`/playlists/${this.props.playlist.id}`} className="playlistIndexItem">
+                <Link to={`/playlists/${this.props.playlist.id}`} className="albumIndexItem">
                     <img className="cover-art-index" src={window.Yacht} />
                     {this.props.playlist.title}
                 </Link>

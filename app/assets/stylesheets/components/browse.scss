@@ -76,6 +76,7 @@
 .cover-art-index {
   height: 185px;
   width: 185px;
+  padding-bottom: 5px;
 }
 
 .browse-index {
@@ -102,4 +103,15 @@
 
 .cover-art-index:hover {
 	filter: brightness(50%)
+}
+
+.artist-art-index:hover {
+	filter: brightness(50%)
+}
+
+.artist-art-index {
+  height: 185px;
+  width: 185px;
+  border-radius: 50%;
+  padding-bottom: 5px;
 }

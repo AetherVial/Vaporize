@@ -16,9 +16,9 @@ class ArtistIndex extends React.Component {
         }
     }
 
-    componentWillUnmount() {
-        this.props.clearArtists();
-    }
+    // componentWillUnmount() {
+    //     this.props.clearArtists();
+    // }
 
     render() {
         const { artists } = this.props;
@@ -29,18 +29,16 @@ class ArtistIndex extends React.Component {
         }
 
         let list = artists.map(artist => {
-            // return (<SidebarIndexItem
-            //     key={artist.id}
-            //     playlist={playlist}
-            // />)
-            return (<Link key={artist.id+artist.name} to={`artists/${artist.id}`}>{artist.name}</Link>)
+            return (<Link to={`/artists/${artist.id}`}           className="albumIndexItem">
+                <img className="artist-art-index" src={artist.photoUrl} />
+                {artist.name}
+            </Link>)
         })
 
         return (
-            <div>
-                <h1 className="list-header">my name is artists</h1>
-                <br></br>
-                <ul>{list}</ul>
+            <div >
+                <h1 className="browse-header">Artists</h1>
+                <ul className="browse-index">{list}</ul>
             </div>
 
         )

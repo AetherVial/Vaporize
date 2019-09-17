@@ -24,7 +24,7 @@ class Browse extends React.Component {
                     </nav>
                 </div>
                 <Route exact path="/browse/albums" component={AlbumIndexContainer} />
-                {/* <ProtectedRoute exact path="browse/artists" component={ArtistIndexContainer} /> */}
+                <Route exact path="/browse/artists" component={ArtistIndexContainer} />
                 <Route exact path="/browse/playlists" component={PlaylistIndexContainer} />
             </div>
         )
