@@ -33,6 +33,9 @@ class TrackIndex extends React.Component{
                     fetchCurrentTrack = {this.props.fetchCurrentTrack}
                     receiveCurrentTrack = {this.props.receiveCurrentTrack}
                     receiveCurrentTrackList = {this.props.receiveCurrentTrackList}
+                    playlistId = {this.props.playlistId}
+                    playlistUser = {this.props.playlistUser}
+                    currentUserId = {this.props.currentUserId}
                 />
             );
         });

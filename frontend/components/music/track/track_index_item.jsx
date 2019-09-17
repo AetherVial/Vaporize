@@ -38,7 +38,6 @@ class TrackIndexItem extends React.Component {
         this.props.fetchCurrentTrack(this.props.track.id)
         let i = findTrackIndex(this.props.tracks, this.props.track.id)
         let q = makeQueue(i, this.props.tracks)
-        // this.props.receiveCurrentTrackList(this.props.tracks)
         this.props.receiveCurrentTrackList(q)
     }
 
@@ -49,6 +48,10 @@ class TrackIndexItem extends React.Component {
                 null
             );
         }
+
+        window.addEventListener('click', () => {
+            $(`.dropdown-content`).removeClass('show-list')
+        })
         return(
             <li key={this.props.track.id + this.props.track.artistName} className="song-index-item">
                 <div className="song-index-categories">
@@ -63,6 +66,9 @@ class TrackIndexItem extends React.Component {
                      currentUserId = {this.props.currentUserId}
                      currentPlaylistId = {this.props.currentPlaylistId}
                      currentTrackId = {this.props.track.id}
+                     playlistId = {this.props.playlistId}
+                     playlistUser = {this.props.playlistUser}
+                     removeTrack = {this.props.removeTrack}
                      />
                     {/* <button id="drpdown-btn" ><SVGUtil.dots /></button> */}
                     

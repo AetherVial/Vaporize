@@ -27,10 +27,10 @@ class MusicBar extends React.Component {
         let button = document.querySelector("play")
         if (player.paused) {
             player.play();
-            this.innerHtml = <SVGUtil.play />
+            // this.props.togglePlay(this.props.playing);
         } else {
             player.pause();
-            this.innerHtml = <SVGUtil.pause />
+            // this.props.togglePlay(this.props.playing);
         }
     }
 
@@ -56,6 +56,15 @@ class MusicBar extends React.Component {
         
     }
 
+    // displayPlay() {
+    //     let audio = document.querySelector('audio')
+    //         if (!this.props.playing) {
+    //             return <SVGUtil.play />
+    //         } else {
+    //             return <SVGUtil.pause />
+    //         }
+    // }
+
     renderTotalTime() {
         const player = document.getElementById('player');
 
@@ -78,7 +87,7 @@ class MusicBar extends React.Component {
         let title;
         let artist;
         let cover;
-        let duration;
+
         if (!this.props.currentlyPlaying) {
             blah = null;
         } else {
@@ -90,10 +99,13 @@ class MusicBar extends React.Component {
             document.getElementById("player").load();
             document.getElementById("player").play();
 
-            const audio = document.querySelector('audio')
             const seekbar = document.querySelector('.seekbar')
             const volBar = document.querySelector('.vol-control')
-            duration = parseInt(audio.duration / 60)
+            const audio = document.querySelector('audio')
+
+            // audio.addEventListener('loadedmetadata', (e) => {
+            //     duration = this.renderTotalTime(e.target.duration)
+            // })
 
             audio.addEventListener('timeupdate', () => {
                 seekbar.value = audio.currentTime / audio.duration * seekbar.max
@@ -108,6 +120,7 @@ class MusicBar extends React.Component {
                 let y = x / 100;
                 audio.volume = y;
             })
+            // console.log(duration)
             
         }
 
@@ -143,7 +156,7 @@ class MusicBar extends React.Component {
                 <div className="volume-rocker">
                     <button className="mute" onClick={this.toggleMute}><SVGUtil.mute /></button>
                     <input className="vol-control" type="range" min="0" max="100" step="1"></input>
-                    {/* <p>{this.renderTotalTime()}</p> */}
+                    {/* <p>{duration}</p> */}
                 </div>
             </div>
         )

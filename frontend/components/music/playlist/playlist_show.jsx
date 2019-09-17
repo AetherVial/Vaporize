@@ -42,6 +42,7 @@ class PlaylistShow extends React.Component {
                     <TrackIndexContainer 
                     playlistId={this.props.match.params.playlistId}
                     trackIds={this.props.playlist.trackIds}
+                    playlistUser = {this.props.playlist.userId}
                     />
                 </div>
             </div>

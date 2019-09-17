@@ -11,34 +11,42 @@ class Dropdown extends React.Component {
             open: false,
         }
         this.handleClick = this.handleClick.bind(this)
+        this.handleRemove = this.handleRemove.bind(this)
     }
 
     handleClick(e) {
         e.stopPropagation();
-        $(".dropdown-content").addClass("show")
+        $(`.${this.props.currentTrackId}`).toggleClass("show-list")
     }
+
+    handleRemove(e) {
+        e.preventDefault();
+        this.props.removeTrack(this.props.playlistId, this.props.currentTrackId)
+    }
+
+    
 
     render() {
 
         let list;
-        if (this.props.currentUserId != this.props.playlistId) {
+        if (this.props.currentUserId != this.props.playlistUser) {
             list =  
                     <div>
                     <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
-                    <ul className="dropdown-content">
+                    <ul className={`dropdown-content  ${this.props.currentTrackId}`}>
                         <li>Add to playlist</li>
                     </ul>
             </div>
                
         } else {
-            list =      <div>
+            list =      
+                    <div>
                         <button id="drpdown-btn" onClick={this.handleClick}><SVGUtil.dots /></button>
-                        <ul className="dropdown-content">
+                        <ul className={`dropdown-content ${this.props.currentTrackId}`}>
                             <li>Add to Playlist</li>
-                            <li>Remove from Playlist</li>
+                            <li onClick={this.handleRemove}>Remove from Playlist</li>
                         </ul>
-                        </div>
-                    
+                    </div> 
         }
         return (
             <div>

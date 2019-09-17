@@ -10,7 +10,9 @@ import {receiveCurrentTrackList, fetchCurrentTrack} from '../../../actions/queue
 const mapStateToProps = (state, ownProps) => {
    return {
         tracks: selectTracks(state, ownProps.trackIds),
-        currentUserPlaylists: currentUserPlaylists(state)
+        currentUserPlaylists: currentUserPlaylists(state),
+        playlistId: ownProps.playlistId,
+        currentUserId: state.session.id
     }
 }
 

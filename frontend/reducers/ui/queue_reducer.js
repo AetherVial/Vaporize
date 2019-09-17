@@ -33,7 +33,11 @@ const queueReducer = (state = _nullState, action) => {
             nextTrackId = newState.queue.shift();
             newState.currentlyPlaying = newState.tracks[nextTrackId];
         case TOGGLE_PLAY:
-            newState.playing = !state.playing;
+            if (state.playing) {
+                newState.playing = false;
+            } else {
+                newState.playing = true;
+            }
             return newState;
         case GO_NEXT:
             newState.queue.push(newState.queue.shift())
