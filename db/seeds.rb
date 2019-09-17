@@ -57,9 +57,8 @@ cover4 = open('https://vaporize-pro.s3-us-west-1.amazonaws.com/nothankyou.png')
 album4.photo.attach(io: cover4, filename: 'nothankyou.png')
 
 album5 = Album.create(title: "Nothing Personal", artist_id: artist4.id)
-cover5 = open('https://vaporize-pro.s3-us-west-1.amazonaws.com/Alltimelownothingpersonal.jpg
-')
-album5.photo.attach(io: cover5, filename: 'nothingpersonal.png')
+cover5 = open('https://vaporize-pro.s3-us-west-1.amazonaws.com/Alltimelownothingpersonal.jpg')
+album5.photo.attach(io: cover5, filename: 'nothingpersonal.jpg')
 
 album6 = Album.create(title: "Rolling Star - Single", artist_id: artist3.id)
 cover6 = open('https://vaporize-pro.s3-us-west-1.amazonaws.com/Yuirollingstar.jpg')
