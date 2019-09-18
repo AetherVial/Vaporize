@@ -22,7 +22,8 @@ class AlbumShow extends React.Component {
 
     if (!this.props.album || !this.props.album.trackIds) return null;
         return (
-            <div className="playlist-show">
+            <div className="playlist-show" style={{ backgroundImage: `url(${this.props.album.album.photoUrl})` }} >
+                {/* style={{ backgroundImage: `url(${this.props.album.album.photoUrl})` }} */}
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">

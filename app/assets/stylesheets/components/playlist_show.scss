@@ -1,19 +1,28 @@
 .playlist-show {
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 0;
+  // background-color: transparent;
+  overflow: hidden scroll;
+  padding-left: 210px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .playlist-show-container {
-  // background: linear-gradient(155deg, rgba(0,212,255,1) 0%, rgb(220, 64, 181) 65%);
-
-  background-color: transparent;
-  padding-left: 220px;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%);
   height: calc(92vh);
-  width: calc(100vw - 220px);
+  width: calc(100vw - 210px);
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  overflow: hidden scroll;
+  backdrop-filter: blur(50px);
 }
+
+// .playlist-show-container {
+//   /* This will make it stack on top of the ::before */
+//   position: relative;
+// }
+
 
 .playlist-title {
   font-weight: 700;
@@ -25,18 +34,23 @@
 .playlist-info {
   display: flex;
   width: 25vw;
+  height: 50vh;
+  min-width: 200px;
+  min-height: 0;
   padding-top: 2.5%;
   align-items: center;
+  text-align: center;
   flex-direction: column;
 }
 
 .playlists {
   display: flex;
-  width:  60vw;
+  width:  50vw;
+  height: calc(100% - 9.75vh);
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: hidden scroll;
-  padding-top: 2.5%;
+  padding-top: 2.5vh;
 }
 
 .temp {
@@ -44,16 +58,16 @@
 }
 
 .cover-art {
-  height: 15vw;
-  width: 15vw;
+  height: 12.5vw;
+  width: 12.5vw;
   min-height: 150px;
   min-width: 150px;
   overflow: hidden;
 }
 
 .cover {
-  height: 15vw;
-  width: 15vw;
+  height: 12.5vw;
+  width: 12.5vw;
   min-height: 150px;
   min-width: 150px;
 }
@@ -61,3 +75,12 @@
 .artist-cover {
   border-radius: 50%;
 }
+
+// .album-show {
+//   width: calc(100vw-210px);
+//   background-color: transparent;
+//   filter: blur(1.5rem);
+//   overflow: hidden scroll;
+//   padding-left: 220px;
+// }
+

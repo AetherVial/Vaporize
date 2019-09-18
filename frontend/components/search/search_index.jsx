@@ -37,7 +37,7 @@ class SearchIndex extends React.Component {
             albumList = Object.values(this.props.albums).map((album, idx) => {
                 return (
                     <Link key={album.title + idx} to={`/albums/${album.id}`} className="albumIndexItem">
-                        <img className="album-art-index" src={album.photoUrl} />
+                        <img className="cover-art-index" src={album.photoUrl} />
                         {album.title}
                     </Link>
                 )

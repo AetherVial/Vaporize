@@ -1,13 +1,16 @@
 #track-play-btn {
     height: 40px;
     width: 40px;
+    min-height: 40px;
+    min-width: 40px;
     background-color: transparent;
 }
 
 .song-index-item {
     display: flex;
     height: 4.5vh;
-    width: 775px;
+    padding-bottom: 5px;
+    width: 100%;
     justify-content: space-between;
     color: white;
     font-size: 15px;
@@ -23,24 +26,24 @@
 
 .song-index-categories {
     display: flex;
-    word-wrap: none;
+    overflow: hidden;
+    white-space: nowrap;
     font-size: 10px;
     height: 100%;
-    width: 35%;
+    width: 70%;
     justify-content: flex-start;
     align-items: center;
 }
 
 .song-index-categories-2 {
     display: flex;
-    word-wrap: none;
+    overflow: hidden;
     font-size: 10px;
     height: 100%;
     width: 30%;
     justify-content: flex-end;
     align-items: center;
 }
-
 
 .song-title {
   font-weight: 1;
@@ -55,4 +58,8 @@
 
 .show {
     display: none;
+}
+
+.track-index {
+  width: 100%;
 }

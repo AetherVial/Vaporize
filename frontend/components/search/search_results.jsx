@@ -39,9 +39,7 @@ class SearchResults extends React.Component {
                 </div>
                 <Route exact path="/search" component={SearchIndexContainer} />
                 <Route exact path="/search/albums" component={AlbumSearchIndexContainer} />
-                <Route exact path="/search/artists" render={() => <ArtistIndexContainer 
-                ParentType="search"/>} />
-
+                <Route exact path="/search/artists" render={() => <ArtistIndexContainer ParentType="search"/>} />
                 <Route exact path="/search/playlists" render={() => <PlaylistIndexContainer
                     ParentType="search" />} />
             </div>

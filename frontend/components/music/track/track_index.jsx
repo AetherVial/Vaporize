@@ -96,7 +96,7 @@ class TrackIndex extends React.Component{
         return(
             <div className="playlists">
             {this.renderAdd()}
-            <ul>{list}</ul>
+            <ul className="track-index">{list}</ul>
             </div>
         )
     }
