@@ -37,7 +37,7 @@ class ArtistIndex extends React.Component {
 
         return (
             <div >
-                <h1 className="browse-header">Artists</h1>
+                <h1 className="browse-header">Artists:</h1>
                 <ul className="browse-index">{list}</ul>
             </div>
 

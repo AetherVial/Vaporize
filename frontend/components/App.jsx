@@ -23,7 +23,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-            <ProtectedRoute exact path="/search" component={search_container} />
+            <ProtectedRoute path="/search" component={search_container} />
             <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
             <ProtectedRoute path="/browse" component={BrowseContainer} />
             <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />

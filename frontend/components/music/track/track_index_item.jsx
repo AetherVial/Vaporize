@@ -1,9 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { fetchTrack } from '../../../actions/track_actions';
-import {withRouter} from "react-router-dom";
-import * as SVGUtil from "../../../util/svg_util";
 import Dropdown from "./dropdown";
+import {Link} from "react-router-dom";
 
 const findTrackIndex = (trackList, trackId) => {
     for (let i = 0; i < trackList.length; i++) {
@@ -54,7 +51,11 @@ class TrackIndexItem extends React.Component {
                     <button id="track-play-btn" onClick={this.handlePlay}><img src={window.Play}/></button>
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>
-                        <li>{this.props.track.artistName} &bull; {this.props.track.albumName}</li>
+                        <li><Link to={`/artists/${this.props.track.artistId}`} replace>
+                            {this.props.track.artistName}</Link>&nbsp;
+                             &bull; &nbsp;
+                             <Link to={`/albums/${this.props.track.albumId}`} replace>
+                        {this.props.track.albumName}</Link></li>
                     </ul>
                 </div>
                 <div className="song-index-categories-2">

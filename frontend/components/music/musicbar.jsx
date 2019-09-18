@@ -111,6 +111,7 @@ class MusicBar extends React.Component {
         } else {
             cover = <div></div>
         }
+
         return (
             <div className="musicBar">
                 <div className="now-playing-info">

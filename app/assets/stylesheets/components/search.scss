@@ -37,3 +37,18 @@
   overflow: scroll;
   height: calc(92vh - 9.75vh - 10px);
 }
+
+.search-tabs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
