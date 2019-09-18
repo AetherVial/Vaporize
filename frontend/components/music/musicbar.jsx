@@ -70,7 +70,6 @@ class MusicBar extends React.Component {
     }
 
     render() {
-        console.log('i rerendered from pause')
         let blah;
         let title;
         let artist;
@@ -112,7 +111,6 @@ class MusicBar extends React.Component {
         } else {
             cover = <div></div>
         }
-        console.log('mynameisrerenderfrompause')
         return (
             <div className="musicBar">
                 <div className="now-playing-info">
