@@ -29,7 +29,8 @@ class PlaylistShow extends React.Component {
         if (!this.props.playlist || !this.props.playlist.trackIds) return null;
         // if (!this.props.playlist) return null;
         return (
-            <div className="playlist-show">
+            <div className="playlist-show"
+                style={{ backgroundImage: `url(${window.Yacht})` }}>
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">

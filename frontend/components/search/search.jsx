@@ -16,9 +16,7 @@ class Search extends React.Component {
     update(field) {
         return e => {
             this.setState({[field]: e.currentTarget.value});
-            if (this.state.query.length > 0) {
-                this.props.search(e.currentTarget.value)
-            }
+            this.props.search(e.currentTarget.value)
         }
     }
 

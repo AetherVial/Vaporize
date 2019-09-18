@@ -5,12 +5,13 @@
     height: 90.25vh;
     width: 210px;
     color: lightgray;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 1);
     cursor: pointer;
     z-index: 1;
     position: fixed;
     // font-family: 'Proxima-Nova';
     font-size: 12px;
+    overflow: hidden scroll;
 }
 
 .selected {
@@ -57,6 +58,7 @@
     align-items: left;
     text-align: left;
     height: 60%;
+    overflow: hidden scroll;
 }
 
 svg {

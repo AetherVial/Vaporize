@@ -25,7 +25,7 @@ class SearchResults extends React.Component {
             )
         } else {
         return (   
-            <div class="search-results">
+            <div className="search-results">
                 
                 <div className='search-tabs-container'>
                     <nav className='nav-tabs'>

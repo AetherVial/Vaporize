@@ -1,21 +1,28 @@
 .playlist-show {
-  // background-color: transparent;
+  position: absolute;
   overflow: hidden scroll;
   padding-left: 210px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 98%;
+  height: 95%;
+}
+
+.playlist-show-container::before {
+  filter: blur(30px);
 }
 
 .playlist-show-container {
-  background: linear-gradient(135deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0) 1%, rgba(0,0,0,1) 100%);
+  position: relative;
   height: calc(92vh);
   width: calc(100vw - 210px);
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow: hidden scroll;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(100px);
 }
 
 // .playlist-show-container {
@@ -27,8 +34,8 @@
 .playlist-title {
   font-weight: 700;
   color: white;
-  font-size: 36px;
-  margin-top: 20px;
+  font-size: 24px;
+  margin-top: 10px;
 }
 
 .playlist-info {
@@ -58,16 +65,16 @@
 }
 
 .cover-art {
-  height: 12.5vw;
-  width: 12.5vw;
+  height: 12.5vh;
+  width: 12.5vh;
   min-height: 150px;
   min-width: 150px;
   overflow: hidden;
 }
 
 .cover {
-  height: 12.5vw;
-  width: 12.5vw;
+  height: 12.5vh;
+  width: 12.5vh;
   min-height: 150px;
   min-width: 150px;
 }
@@ -75,12 +82,3 @@
 .artist-cover {
   border-radius: 50%;
 }
-
-// .album-show {
-//   width: calc(100vw-210px);
-//   background-color: transparent;
-//   filter: blur(1.5rem);
-//   overflow: hidden scroll;
-//   padding-left: 220px;
-// }
-
