@@ -5,8 +5,14 @@ import { fetchAlbums } from '../../../actions/album_actions';
 import AlbumIndex from "./album_index";
 
 const mapStateToProps = (state, ownProps) => {
+    let albums;
+    if (ownProps.ParentType === "search") {
+        albums = Object.values(state.search.albums)
+    } else {
+        albums = Object.values(state.entities.albums)
+    }
     return {
-        albums: Object.values(state.entities.albums)
+        albums: albums
     };
 }
 

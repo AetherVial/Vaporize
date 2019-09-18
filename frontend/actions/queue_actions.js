@@ -17,10 +17,9 @@ export const receiveCurrentTrack = track => ({
     track
 })
 
-export const togglePlay = (boolean) => {
+export const togglePlay = () => {
     return {
-        type: TOGGLE_PLAY,
-        boolean
+        type: TOGGLE_PLAY
     }
 }
 

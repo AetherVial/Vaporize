@@ -8,6 +8,7 @@ import TrackIndexItem from "../music/track/track_index_item"
 import TrackIndexContainer from '../music/track/track_index_container';
 import { searchTracks } from '../../reducers/selectors';
 import TrackIndex from '../music/track/track_index';
+import ArtistIndexContainer from '../music/artist/artist_index_container';
 
 class SearchResults extends React.Component {
     constructor(props) {
@@ -28,24 +29,11 @@ class SearchResults extends React.Component {
             ) 
         } else {
             if (this.props.search.tracks) {
-                // console.log('rerender after search')
-                // const blah = searchTracks(this.props.search.tracks)
-                // console.log(searchTracks(this.props.search.tracks))
-                // trackList = <TrackIndexContainer tracks={blah}/>
-                // console.log(currentPlaylistTracks(this.props.tracks))
-                // trackList= Object.values(this.props.tracks).map((track, idx) => {
-                //         return (<div key={Math.random()}>
-                //         <TrackIndexItem
-                //         temp = {idx}
-                //         track= {track} 
-                //         fetchCurrentTrack = {this.props.fetchCurrentTrack}/><br/></div>)
-                // })
                 trackList = <TrackIndexContainer ParentType="search" trackIds={Object.keys(this.props.search.tracks).map(el => parseInt(el))} />
             }
             if (this.props.artists) {
-                artistList = Object.values(this.props.artists).map(artist => {
-                    return (<div key={Math.random()}>{artist.name}<br /></div>)
-                })
+                artistList = <ArtistIndexContainer ParentType="search" />
+                }
             }
             if (this.props.albums) {
                 albumList = Object.values(this.props.albums).map(album => {
@@ -57,18 +45,13 @@ class SearchResults extends React.Component {
                     return (<div key={Math.random()}>{playlist.title}<br /></div>)
                 })
             }
-        }
+        
         
         return (   
-            <div>
+            <div class="search-results">
                 <h1>Matched Songs:</h1>
-                {/* <ul> */}
                     {trackList}
-                {/* </ul> */}
-                <h1>Matched Artists:</h1>
-                <ul>
                     {artistList}
-                </ul>
                 <h1>Matched Albums:</h1>
                 <ul>
                     {albumList}

@@ -1,36 +1,45 @@
 import React from 'react';
 import * as SVGUtil from '../../util/svg_util';
+import PlayButton from './play_button';
 
 class MusicBar extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            play_button: <SVGUtil.play />,
+            currentTime: 0,
+            totalTime: 0,
+            shuffle: false
+        }
+
         this.handlePlayClick = this.handlePlayClick.bind(this);
         this.toggleMute = this.toggleMute.bind(this);
-        this.renderTotalTime = this.renderTotalTime.bind(this);
-        this.handleNext = this.handleNext.bind(this)
+        // this.renderTotalTime = this.renderTotalTime.bind(this);
+        this.handleNext = this.handleNext.bind(this);
+        this.handleBack = this.handleBack.bind(this);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        // console.log(this.props.currentlyPlaying)
-        // console.log(nextProps.currentlyPlaying)
         if (this.props.currentlyPlaying && this.props.currentlyPlaying.id === nextProps.currentlyPlaying.id) {
             return false;
-        } else if (!nextProps.playing) {
-            return false;
         }
+        // } else if (!nextProps.playing) {
+        //     return false;
+        // } 
         return true;
     }
 
     handlePlayClick(e) {
         e.preventDefault();
         let player = document.getElementById("player")
-        let button = document.querySelector("play")
+        let button = document.querySelector(".play")
         if (player.paused) {
+            this.props.togglePlay();
             player.play();
-            // this.props.togglePlay(this.props.playing);
         } else {
+            this.props.togglePlay();
             player.pause();
-            // this.props.togglePlay(this.props.playing);
         }
     }
 
@@ -51,43 +60,21 @@ class MusicBar extends React.Component {
         }
     }
 
-    handleSlide(e) {
+    handleBack(e) {
         e.preventDefault();
-        
-    }
-
-    // displayPlay() {
-    //     let audio = document.querySelector('audio')
-    //         if (!this.props.playing) {
-    //             return <SVGUtil.play />
-    //         } else {
-    //             return <SVGUtil.pause />
-    //         }
-    // }
-
-    renderTotalTime() {
-        const player = document.getElementById('player');
-
-        if (player && player.duration) {
-            const duration = player.duration;
-            const total_minute = parseInt(duration / 60) % 60;
-            const total_seconds_long = duration % 60;
-            const total_seconds = total_seconds_long.toFixed();
-            const totalTime = (total_minute < 10 ? "0" + total_minute :
-                total_minute) + ":" + (total_seconds < 10 ? "0" + total_seconds : total_seconds);
-
-            return totalTime;
-        } else {
-            return '--:--';
+        let player = document.getElementById("player")
+        if (player.currentTime > 2) {
+            player.load();
+            player.play();
         }
     }
 
     render() {
+        console.log('i rerendered from pause')
         let blah;
         let title;
         let artist;
         let cover;
-
         if (!this.props.currentlyPlaying) {
             blah = null;
         } else {
@@ -103,9 +90,6 @@ class MusicBar extends React.Component {
             const volBar = document.querySelector('.vol-control')
             const audio = document.querySelector('audio')
 
-            // audio.addEventListener('loadedmetadata', (e) => {
-            //     duration = this.renderTotalTime(e.target.duration)
-            // })
 
             audio.addEventListener('timeupdate', () => {
                 seekbar.value = audio.currentTime / audio.duration * seekbar.max
@@ -120,7 +104,6 @@ class MusicBar extends React.Component {
                 let y = x / 100;
                 audio.volume = y;
             })
-            // console.log(duration)
             
         }
 
@@ -129,8 +112,8 @@ class MusicBar extends React.Component {
         } else {
             cover = <div></div>
         }
+        console.log('mynameisrerenderfrompause')
         return (
-
             <div className="musicBar">
                 <div className="now-playing-info">
                     {cover}
@@ -139,24 +122,25 @@ class MusicBar extends React.Component {
                             {title}
                         </p>
                         <br/>
-                            {artist}
+                            {artist} 
                         </div>
                 </div>
                 <div className="song-stuff">
                     <div className="controls">
-                    <button className="back"><SVGUtil.rw /></button>
-                        <button className="play" onClick={this.handlePlayClick}><SVGUtil.play /></button>
+                    <button className="back" onClick={this.handleBack}><SVGUtil.rw /></button>
+                        <button className="play" onClick={this.handlePlayClick}>
+                            <PlayButton />
+                        </button>
                     <button className="forward" onClick={this.handleNext}>
                         <SVGUtil.ff />
                     </button>
                     <audio id="player" onEnded={this.handleNext}></audio>
                     </div>
-                    <input onChange={this.seek} className="seekbar" type="range" min="0" max="100" step="0.01"></input>
+                        <input onChange={this.seek} className="seekbar" type="range" min="0" max="100" step="0.01"></input>
                 </div>
                 <div className="volume-rocker">
                     <button className="mute" onClick={this.toggleMute}><SVGUtil.mute /></button>
                     <input className="vol-control" type="range" min="0" max="100" step="1"></input>
-                    {/* <p>{duration}</p> */}
                 </div>
             </div>
         )

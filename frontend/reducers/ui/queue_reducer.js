@@ -19,7 +19,6 @@ let _nullState = {
 const queueReducer = (state = _nullState, action) => {
     Object.freeze(state)
     let nextTrackId;
-    //let trackIndex;
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_TRACK:
@@ -33,11 +32,7 @@ const queueReducer = (state = _nullState, action) => {
             nextTrackId = newState.queue.shift();
             newState.currentlyPlaying = newState.tracks[nextTrackId];
         case TOGGLE_PLAY:
-            if (state.playing) {
-                newState.playing = false;
-            } else {
-                newState.playing = true;
-            }
+            newState.playing = !newState.playing;
             return newState;
         case GO_NEXT:
             newState.queue.push(newState.queue.shift())
