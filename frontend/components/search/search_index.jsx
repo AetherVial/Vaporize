@@ -53,7 +53,7 @@ class SearchIndex extends React.Component {
             })
         }
         return(
-            <div>
+            <div className="search-index">
                 <h2>Matched Songs:</h2>
                 {trackList}
                 <br />

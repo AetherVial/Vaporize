@@ -22,7 +22,7 @@ class AlbumSearchIndex extends React.Component {
         let list = albums.map(album => {
             return (
                 <li key={album.id}>
-                    <Link to={`/albums/${album.id}`} className="albumIndexItem">
+                    <Link to={`/albums/${album.id}`} className="artistIndexItem">
                         <img className="cover-art-index" src={album.photoUrl} />
                         {album.title}
                     </Link> 
