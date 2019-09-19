@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TrackIndexContainer from '../track/track_index_container';
+// const ColorThief = require('colorthief');
+// import ColorThief from './node_modules/colorthief/dist/color-thief.mjs'
 
 class AlbumShow extends React.Component {
     constructor(props) {
@@ -21,9 +23,12 @@ class AlbumShow extends React.Component {
     render() {
 
     if (!this.props.album || !this.props.album.trackIds) return null;
+        // console.log(color)
         return (
-            <div className="playlist-show" style={{ backgroundImage: `url(${this.props.album.album.photoUrl})` }} >
+            <div className="playlist-show">
                 {/* style={{ backgroundImage: `url(${this.props.album.album.photoUrl})` }} */}
+                <div style={{ backgroundImage: `url(${this.props.album.album.photoUrl})` }} className="playlist-show-bg">
+                </div>
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">

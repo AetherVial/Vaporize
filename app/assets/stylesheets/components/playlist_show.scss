@@ -2,27 +2,27 @@
   position: absolute;
   overflow: hidden scroll;
   padding-left: 210px;
+}
+
+.playlist-show-bg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 98%;
-  height: 95%;
-}
-
-.playlist-show-container::before {
-  filter: blur(30px);
+  width: calc(100vw - 210px);
+  height: calc(90vh);
+  filter: blur(50px);
 }
 
 .playlist-show-container {
-  background: linear-gradient(135deg, rgba(0,0,0,0) 1%, rgba(0,0,0,1) 100%);
-  position: relative;
-  height: calc(92vh);
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 75%);
+  position: absolute;
+  top: 0;
+  height: calc(90.25vh);
   width: calc(100vw - 210px);
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow: hidden scroll;
-  backdrop-filter: blur(100px);
 }
 
 // .playlist-show-container {

@@ -29,14 +29,15 @@
 }
 
 .add-to-playlist {
+  // border: 3px solid red;
   background-color: rgba(0,0,0,0.75);
   position: absolute;
   top:0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 72vh;
+  width: calc(100vw-210px);
   z-index: 10;
   display: flex;
   padding-top: 10%;

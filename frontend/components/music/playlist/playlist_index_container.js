@@ -7,7 +7,7 @@ import PlaylistIndex from "./playlist_index";
 
 const mapStateToProps = (state, ownProps) => {
     let playlists;
-    if (ownProps.ParentType === "search") {
+    if (ownProps.ParentType === "search" && state.search.playlists) {
         playlists = Object.values(state.search.playlists)
     } else {
         playlists = Object.values(currentUserPlaylists(state))

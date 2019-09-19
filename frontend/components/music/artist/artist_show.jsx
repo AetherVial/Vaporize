@@ -22,6 +22,9 @@ class ArtistShow extends React.Component {
         if (!this.props.artist || !this.props.artist.trackIds) return null;
         return (
             <div className="playlist-show">
+                <div className="playlist-show-bg"
+                    style={{ backgroundImage: `url(${this.props.artist.photoUrl})` }}
+                ></div>
                 <div className="playlist-show-container">
                     <div className="playlist-info">
                         <div className="cover-art">

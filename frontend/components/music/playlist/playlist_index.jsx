@@ -12,6 +12,7 @@ class PlaylistIndex extends React.Component {
 
     render() {
         const { playlists } = this.props;
+        
         if (!playlists) {
             return (
                 null

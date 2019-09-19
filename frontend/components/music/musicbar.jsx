@@ -24,9 +24,6 @@ class MusicBar extends React.Component {
         if (this.props.currentlyPlaying && this.props.currentlyPlaying.id === nextProps.currentlyPlaying.id) {
             return false;
         }
-        // } else if (!nextProps.playing) {
-        //     return false;
-        // } 
         return true;
     }
 
@@ -133,7 +130,9 @@ class MusicBar extends React.Component {
                     <button className="forward" onClick={this.handleNext}>
                         <SVGUtil.ff />
                     </button>
-                    <audio id="player" onEnded={this.handleNext}></audio>
+                    <audio id="player" onEnded={this.handleNext}
+                            currenttime={this.state.currentTime}>
+                    </audio>
                     </div>
                         <input onChange={this.seek} className="seekbar" type="range" min="0" max="100" step="0.01"></input>
                 </div>
