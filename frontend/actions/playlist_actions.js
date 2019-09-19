@@ -1,7 +1,10 @@
 import * as PlaylistApiUtils from "../util/playlist_api_util";
+import * as PlaylistFollowApiUtils from '../util/playlist_follow_api_util';
 export const RECEIVE_ALL_PLAYLISTS = "RECEIVE_ALL_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
+export const UNFOLLOW_PLAYLIST = "UNFOLLOW_PLAYLIST";
+export const FOLLOW_PLAYLIST = "FOLLOW_PLAYLIST";
 
 const receiveAllPlaylists = playlists => ({
     type: RECEIVE_ALL_PLAYLISTS,
@@ -10,6 +13,15 @@ const receiveAllPlaylists = playlists => ({
 
 export const receivePlaylist = playlist => ({
     type: RECEIVE_PLAYLIST,
+    playlist
+});
+
+export const unfollowPlaylist = playlist => ({
+    type: UNFOLLOW_PLAYLIST,
+    playlist
+});
+export const followPlaylist = playlist => ({
+    type: FOLLOW_PLAYLIST,
     playlist
 });
 
@@ -38,3 +50,13 @@ export const updatePlaylist = playlist => dispatch => (
 export const deletePlaylist = playlistId => dispatch => (
     PlaylistApiUtils.deletePlaylist(playlistId).then(playlist => dispatch(removePlaylist(playlistId)))
 );
+
+export const createPlaylistFollow = (playlistId, userId) => dispatch => {
+    return PlaylistFollowApiUtils.createPlaylistFollow(playlistId, userId)
+        .then(playlist => dispatch(followPlaylist(playlist)));
+};
+
+export const deletePlaylistFollow = (playlistId, userId) => dispatch => {
+    return PlaylistFollowApiUtils.deletePlaylistFollow(playlistId, userId)
+        .then(playlist => dispatch(unfollowPlaylist(playlist)));
+};

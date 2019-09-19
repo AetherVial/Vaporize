@@ -24,6 +24,11 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :playlists
+  has_many :playlist_follows
+  
+  has_many :followed_playlists,
+    through: :playlist_follows,
+    source: :playlist
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Root} from './components/root';
 import configureStore from './store/store';
-import {removeTrackFromPlaylist, addTrackToPlaylist} from './actions/track_actions';
+import {createPlaylistFollow, deletePlaylistFollow} from './actions/playlist_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //Test
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.addTrackToPlaylist = addTrackToPlaylist;
+    window.createPlaylistFollow = createPlaylistFollow;
+    window.deletePlaylistFollow = deletePlaylistFollow;
     //test end
     // window.onclick = function (event) {
     //     if (!event.target.matches('.dropbtn')) {

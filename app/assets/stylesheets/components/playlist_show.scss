@@ -2,6 +2,7 @@
   position: absolute;
   overflow: hidden scroll;
   padding-left: 210px;
+  color: white;
 }
 
 .playlist-show-bg {
@@ -10,7 +11,7 @@
   background-size: cover;
   width: calc(100vw - 210px);
   height: calc(90vh);
-  filter: blur(50px);
+  filter: blur(300px);
 }
 
 .playlist-show-container {

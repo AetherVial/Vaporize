@@ -1,7 +1,9 @@
 import {
     RECEIVE_ALL_PLAYLISTS,
     RECEIVE_PLAYLIST,
-    REMOVE_PLAYLIST
+    REMOVE_PLAYLIST,
+    UNFOLLOW_PLAYLIST,
+    FOLLOW_PLAYLIST,
 } from "../../actions/playlist_actions";
 
 export const playlistReducer = (state = {}, action) => {
@@ -10,6 +12,10 @@ export const playlistReducer = (state = {}, action) => {
         case RECEIVE_ALL_PLAYLISTS:
             return Object.assign({}, state, action.playlists);
         case RECEIVE_PLAYLIST:
+            return Object.assign({}, state, action.playlist);
+        case UNFOLLOW_PLAYLIST:
+            return Object.assign({}, state, action.playlist);
+        case FOLLOW_PLAYLIST:
             return Object.assign({}, state, action.playlist);
         case REMOVE_PLAYLIST:
             let newState = Object.assign({}, state);

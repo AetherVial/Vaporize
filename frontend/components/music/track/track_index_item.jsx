@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from "./dropdown";
 import {Link} from "react-router-dom";
+import * as SVGUtil from '../../../util/svg_util';
 
 const findTrackIndex = (trackList, trackId) => {
     for (let i = 0; i < trackList.length; i++) {
@@ -12,7 +13,7 @@ const findTrackIndex = (trackList, trackId) => {
 
 const makeQueue = (index, array) => {
     let temp = array.slice(index);
-    return temp.concat(array)
+    return temp.concat(array.slice(0, index))
 }
 
 class TrackIndexItem extends React.Component {
@@ -46,9 +47,9 @@ class TrackIndexItem extends React.Component {
             $(`.dropdown-content`).removeClass('show-list')
         })
         return(
-            <li key={this.props.track.id + this.props.track.artistName} className="song-index-item">
+            <li key={this.props.track.id + this.props.track.artistName} className="song-index-item" onDoubleClick={this.handlePlay}>
                 <div className="song-index-categories">
-                    <button id="track-play-btn" onClick={this.handlePlay}><img src={window.Play}/></button>
+                    <button id="track-play-btn" onClick={this.handlePlay}><SVGUtil.note /></button>
                     <ul>
                         <h2 className="song-title">{this.props.track.title}</h2>
                         <li><Link to={`/artists/${this.props.track.artistId}`} replace>

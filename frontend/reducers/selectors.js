@@ -4,6 +4,12 @@ export const currentUserPlaylists = (state) => (
     })
 );
 
+export const userFollowedPlaylists = (state) => (
+    Object.values(state.entities.playlists).filter(playlist => {
+        return state.entities.users[state.session.id].followedPlaylists.includes(playlist.id)
+    })
+)
+
 export const selectTracks = (state, trackIds) => (
     trackIds.map(id => state.entities.tracks[id])
 )

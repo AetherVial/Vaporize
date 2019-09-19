@@ -20,4 +20,10 @@ class Playlist < ApplicationRecord
     has_many :tracks,
         through: :playlist_tracks,
         source: :track
+    
+    has_many :playlist_follows
+    
+    has_many :followers,
+        through: :playlist_follows,
+        source: :user
 end
