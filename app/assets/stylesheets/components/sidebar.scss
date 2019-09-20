@@ -11,7 +11,8 @@
     position: fixed;
     // font-family: 'Proxima-Nova';
     font-size: 12px;
-    overflow: hidden scroll;
+    overflow-x: hidden scroll;
+    overflow-y: hidden scroll;
 }
 
 .selected {
@@ -58,7 +59,8 @@
     align-items: left;
     text-align: left;
     height: 60%;
-    overflow: hidden scroll;
+    overflow-x: hidden scroll;
+    overflow-y: hidden scroll;
 }
 
 svg {

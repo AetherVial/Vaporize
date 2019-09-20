@@ -1,6 +1,7 @@
 .playlist-show {
   position: absolute;
-  overflow: hidden scroll;
+  overflow-x: hidden scroll;
+  overflow-y: hidden scroll;
   padding-left: 210px;
   color: white;
 }
@@ -23,7 +24,8 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  overflow: hidden scroll;
+  overflow-x: hidden scroll;
+  overflow-y: hidden scroll;
 }
 
 // .playlist-show-container {
