@@ -22,9 +22,9 @@ Welcome to Vaporize, a faithful Spotify clone utilizing a Ruby on Rails, React /
 
 To use Vaporize, you can go to the live link up top, which takes you to the site hosted on Heroku or you can download this repository and run the following: 
 
-* ```js npm init ```
-* ```js npm install ```
-* ```js npm start ```
+* ```npm init ```
+* ```npm install ```
+* ```npm start ```
 
 and go to localhost:3000 in your browser of choice (preferebly Chrome).
 
