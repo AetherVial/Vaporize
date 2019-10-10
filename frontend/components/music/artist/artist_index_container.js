@@ -7,7 +7,7 @@ import ArtistIndex from "./artist_index";
 const mapStateToProps = (state, ownProps) => {
     let artists;
     if (ownProps.ParentType === "search") {
-        artists = Object.values(state.search.artists)
+        artists = Object.values(state.search.artists) || {}
     } else {
         artists = Object.values(state.entities.artists)
     }
