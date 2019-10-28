@@ -42,7 +42,7 @@ class Greeting extends React.Component {
             <div id="navBar-header"><img src={window.PBURL} />
                 <div id="apptitle">Vaporize</div>
             </div>
-            <NavLink exact to="/browse" className="sidebar-el"
+            <NavLink exact to="/browse/artists" className="sidebar-el"
                 activeClassName="selected">
                 <SVGUtil.browse />
                     Home</NavLink>
