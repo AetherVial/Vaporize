@@ -15,11 +15,11 @@ class SidebarPlaylists extends React.Component {
 
     render() {
         let list = this.props.playlists.map(playlist => {
-            return (<li key={playlist.id + Math.random()} className="sidebar-el">
-                <NavLink activeClassName="selected" to={`/playlists/${playlist.id}`}>
+            return (
+                <NavLink to={`/playlists/${playlist.id}`} key={playlist.id + Math.random()} className="sidebar-el" activeClassName="selected">
                     {playlist.title}
                 </NavLink>
-            </li>)
+            )
         })
 
         return(

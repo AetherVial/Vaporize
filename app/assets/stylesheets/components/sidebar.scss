@@ -2,17 +2,18 @@
     padding-top: 24px;
     flex-direction: column;
     justify-content: left;
-    height: 90.25vh;
+    height: calc(100% - 90px);
+    min-height: 60%;
     width: 210px;
     color: lightgray;
     background-color: rgba(0, 0, 0, 1);
     cursor: pointer;
     z-index: 1;
     position: fixed;
-    // font-family: 'Proxima-Nova';
     font-size: 12px;
-    overflow-x: hidden scroll;
-    overflow-y: hidden scroll;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .selected {
@@ -37,7 +38,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     background: transparent;
-    width: 80%;
+    width: 210px;
     font-size: 14px;
 }
 
@@ -53,14 +54,16 @@
 }
 
 .sidebar-list {
-    top: 10px;
+    // top: 10px;
     display: flex;
-    width: 90%;
+    width: 100%;
     align-items: left;
     text-align: left;
-    height: 60%;
-    overflow-x: hidden scroll;
-    overflow-y: hidden scroll;
+    height: 50%;
+    min-height: 50px;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 svg {

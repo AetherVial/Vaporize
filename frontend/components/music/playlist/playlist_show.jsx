@@ -25,7 +25,7 @@ class PlaylistShow extends React.Component {
     handleClick(e) {
         e.preventDefault();
         this.props.deletePlaylist(this.props.match.params.playlistId)
-            .then(this.props.history.push('/browse'))
+            .then(this.props.history.push('/browse/artists'))
     }
 
     followToggle(e) {
