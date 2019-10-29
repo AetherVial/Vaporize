@@ -11,8 +11,7 @@
     z-index: 1;
     position: fixed;
     font-size: 12px;
-    overflow-y: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -61,8 +60,7 @@
     text-align: left;
     height: 50%;
     min-height: 50px;
-    overflow-y: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 

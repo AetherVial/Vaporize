@@ -23,8 +23,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  overflow-x: hidden scroll;
-  overflow-y: hidden scroll;
+  overflow: auto;
 }
 
 .playlist-title {
@@ -49,8 +48,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  overflow-y: hidden;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .playlists {
@@ -59,9 +57,7 @@
   height: calc(100% - 90px);
   flex-wrap: wrap;
   justify-content: flex-start;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow-y: scroll;
+  overflow: auto;
   padding-top: 2.5vh;
 }
 
