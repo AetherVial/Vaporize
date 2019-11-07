@@ -46,8 +46,8 @@ class TrackIndex extends React.Component{
                                 <li key={playlist.id}>
                                     <div className='albumIndexItem'>
                                     <div onClick={this.handleAdd(playlist.id, this.state.trackId)}>
-                                        <img className='album-art-index' src={window.Yacht}></img>
-                                        <span>{playlist.title}</span>
+                                    <img className='cover-art-index' src={window.Yacht}></img>
+                                    <span>{playlist.title}</span>
                                     </div>
                                     </div>
                                 </li>
