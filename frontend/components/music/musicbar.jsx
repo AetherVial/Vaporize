@@ -15,7 +15,6 @@ class MusicBar extends React.Component {
 
         this.handlePlayClick = this.handlePlayClick.bind(this);
         this.toggleMute = this.toggleMute.bind(this);
-        // this.renderTotalTime = this.renderTotalTime.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handleBack = this.handleBack.bind(this);
     }
