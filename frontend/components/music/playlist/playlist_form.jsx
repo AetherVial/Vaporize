@@ -48,8 +48,10 @@ class PlaylistForm extends React.Component {
                                     onChange={this.update('title')}/>
                         </label>
                         <br></br>
-                    <input id="modal-btn" type="submit" value={this.props.formType}/>
-                    <div id="modal-btn" className="close">Close</div>
+                    <div className="buttons">
+                        <input id="modal-btn" type="submit" value={this.props.formType} />
+                        <div id="modal-btn" className="close">Close</div>
+                    </div>
                     </form>
                 </div>
             </div>

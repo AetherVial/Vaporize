@@ -71,3 +71,8 @@
 .close:focus {
   cursor: pointer;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
