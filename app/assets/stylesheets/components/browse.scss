@@ -38,7 +38,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    // margin-left: 210px;
     width: calc(100vw - 220px);
     text-align: center;
     text-transform: uppercase;
@@ -84,6 +83,7 @@
   padding-left: 10px;
   flex-direction: row;
   flex-wrap: wrap;
+  width: calc(100vw - 220px);
 }
 
 .albumIndexItem {

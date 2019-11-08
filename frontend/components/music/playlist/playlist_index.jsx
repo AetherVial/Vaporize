@@ -29,7 +29,7 @@ class PlaylistIndex extends React.Component {
 
         return (
             <div>
-                <h1 className="browse-header">Playlists:</h1>
+                <h1 className="browse-header">Your Playlists:</h1>
                 <ul className="browse-index">
                     {list}
                 </ul>
